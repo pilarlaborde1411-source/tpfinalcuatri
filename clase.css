@@ -58,15 +58,7 @@ h1
 {
     text-align: center;
 }
-.marca
-{
-    height: 50px;
-    width: 100px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-image:url(im/Isabelle-removebg-preview.jpg);
-}
+
 .btnSumar
 {
     margin-left: 15px;
