@@ -1,13 +1,27 @@
 .sesion{
-   width: 200px;
-   height: 200px; 
+   width: 300px;
+   height: 300px; 
    text-align: center;
    padding: 40px 50px;
+   margin: auto;
+   margin-top: 210px;
+
 }
 
+#formse input
+{
+   padding: 4%;
+   margin: 1%;
+}
 .fotito
 {
-width: 50px;
-height: 50px;
-background-image: url(im/usuario.png);
+width: 50%;
+height: 50%;
+background-image: url(im/usuariosesion.png);
+background-position: center;        
+background-repeat: no-repeat;       
+background-size: cover;    
+margin: auto;
+margin-bottom: 20px;
 }
+
