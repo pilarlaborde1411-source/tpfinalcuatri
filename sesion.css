@@ -1,6 +1,13 @@
 .sesion{
    width: 200px;
-   height: 200px;
-   background-color: brown; 
+   height: 200px; 
    text-align: center;
+   padding: 40px 50px;
+}
+
+.fotito
+{
+width: 50px;
+height: 50px;
+background-image: url(im/usuario.png);
 }
