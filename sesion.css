@@ -2,7 +2,7 @@
    width: 300px;
    height: 300px; 
    text-align: center;
-   padding: 40px 30px;
+   padding: 40px 50px;
    margin: auto;
    margin-top: 210px;
    background-color: blue;
@@ -10,7 +10,8 @@
 }
 .veri
 {
-   float: left;
+  
+ 
 }
 #formse input
 {
