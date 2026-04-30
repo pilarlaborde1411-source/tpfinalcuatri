@@ -8,7 +8,10 @@
    background-color: blue;
 
 }
-
+.veri
+{
+   float: left;
+}
 #formse input
 {
    padding: 4%;
