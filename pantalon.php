@@ -53,7 +53,7 @@
       <div class="card" style="width: 25rem;">
         <img src="im/pantalon1.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title"></h5>
+          <h5 class="card-title">Straight fit</h5>
           <p class="card-text"></p>
           <h3>$13.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
