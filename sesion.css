@@ -39,3 +39,9 @@
     width: 50%;
 }
 
+@media(max-width: 768px) {
+    .container {
+        height: 30%;
+        margin-top: 29%;
+    }
+}
