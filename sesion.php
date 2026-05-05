@@ -14,6 +14,7 @@
             <input type="password" name="contrasena" required placeholder="Contraseña"> <br>
             <button type="submit">Ingresar</button>
         </form>
+        <p>¿No tienes una cuenta?  <a href="registrarse.php">Registrate!</a></p>
     </div>
 </body>
 </html>

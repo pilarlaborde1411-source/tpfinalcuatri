@@ -1,11 +1,13 @@
-.sesion{
-   width: 300px;
-   height: 300px; 
-   text-align: center;
-   padding: 40px 50px;
-   margin: auto;
-   margin-top: 210px;
-
+.container{
+    display: flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    width: 350px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 13%; 
 }
 
 .usuario {
@@ -17,20 +19,18 @@
 }
 
 .form {
-    width: 27%;
-    height: 1%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 15px;
 }
 
 .form input {
     width: 90%;
     height: 38px;
-    margin: -2%;
+    margin: 1%;
 }
 
 .form button {
