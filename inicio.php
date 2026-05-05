@@ -11,7 +11,7 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><h1>ISABELLE</h1></a>
+    <a class="navbar-brand" href="#"><h1>BUBBA STORE</h1></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,14 +31,13 @@
             Collection
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="top.html">Tops y Remeras</a></li>
-            <li><a class="dropdown-item" href="pantalon.html">Pantalones</a></li>
+            <li><a class="dropdown-item" href="top.php">Tops y Remeras</a></li>
+            <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
             <li><a class="dropdown-item" href="#">Zapatos</a></li>
             <li><a class="dropdown-item" href="#">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
         </li>
-        <button id="btnReiniciar">vaciar</button>
         <img src="im/hos.png" alt="" id="carrito"> <p id="contador">Contador:0</p>
       </ul>
       <img src="im/usuario.png" id="usuario" alt="">

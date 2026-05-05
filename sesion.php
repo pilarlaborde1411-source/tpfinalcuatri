@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="sesion">
-        <div class="fotito"></div>
-        <form method="post" action="" id="formse">
+        <div class="usuario"></div>
+        <form method="post" action="">
             <input type="text"  name="nombre" required placeholder="Usuario"> <br>
             <input type="password" name="contrasena" required placeholder="Contraseña"> <br>
             <button type="submit">Ingresar</button>
