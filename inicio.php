@@ -31,7 +31,7 @@
             Collection
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="top.html">Tops y Remeras</a></li>
+            <li><a class="dropdown-item" href="top.php">Tops y Remeras</a></li>
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
             <li><a class="dropdown-item" href="#">Zapatos</a></li>
             <li><a class="dropdown-item" href="#">Camperas</a></li>

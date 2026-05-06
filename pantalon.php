@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="clase.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="inicio.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contactos</a>
@@ -31,7 +31,8 @@
             Collection
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="top.html">Tops y Remeras</a></li>
+            <li><a class="dropdown-item" href="top.php">Tops y Remeras</a></li>
+            <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
             <li><a class="dropdown-item" href="#">Zapatos</a></li>
             <li><a class="dropdown-item" href="#">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
@@ -53,9 +54,9 @@
       <div class="card" style="width: 25rem;">
         <img src="im/pantalon1.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">Straight fit</h5>
-          <p class="card-text"></p>
-          <h3>$13.000</h3>
+          <h5 class="card-title">Traje recto</h5>
+          <p class="card-text">Pantalon de Traje Beige</p>
+          <h3>$40.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -64,11 +65,11 @@
     <!-- CARD 2 -->
       <div class="col-md-4 mb-4">
         <div class="card" style="width: 25rem;">
-          <img src="im/top euge.png" class="card-img-top" alt="">
+          <img src="im/pantalon2.jpg" class="card-img-top" alt="">
           <div class="card-body">
-             <h5 class="card-title"></h5>
-              <p class="card-text"></p>
-              <h3>$15.000</h3>
+             <h5 class="card-title">Flare Jean</h5>
+              <p class="card-text">Jean celeste</p>
+              <h3>$25.000</h3>
             <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
           </div>
         </div>
@@ -77,10 +78,10 @@
     <!-- CARD 3 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top lillie.webp" class="card-img-top" alt="">
+        <img src="im/pantalon3.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
+          <h5 class="card-title">Cargo Verde</h5>
+          <p class="card-text">Pantalon Verde Caro</p>
           <h3>$20.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
@@ -90,10 +91,10 @@
      <!-- CARD 4 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top miel.png" class="card-img-top" alt="">
+        <img src="im/pantalon4.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">/h5>
-          <p class="card-text"></p>
+          <h5 class="card-title">Calsa Flare</h5>
+          <p class="card-text">Calsa flare negra</p>
           <h3></h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
@@ -103,7 +104,7 @@
      <!-- CARD 5 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top mowi.png" class="card-img-top" alt="">
+        <img src="im/" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text"></p>
@@ -116,7 +117,7 @@
      <!-- CARD 6 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top taisha.png" class="card-img-top" alt="">
+        <img src="im/" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text"></p>
