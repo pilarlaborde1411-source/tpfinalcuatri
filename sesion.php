@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <title>Iniciar sesion</title>
+    <title>Document</title>
     <link rel="stylesheet" href="sesion.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-    <div class="sesion">
+    <div class="container">
         <div class="usuario"></div>
-        <form class="form" method="post" action="">
+        <form method="post" action="" class="form">
             <input type="text"  name="nombre" required placeholder="Usuario"> <br>
             <input type="password" name="contrasena" required placeholder="Contraseña"> <br>
-            <button type="submit" class="btn btn-outline-dark">Ingresar</button>
+            <button type="submit" class="btn btn-outline-dark">Iniciar sesion</button>
         </form>
+        <p>¿No tienes una cuenta?  <a href="registrarse.php">Registrate!</a></p>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </html>
