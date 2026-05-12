@@ -1,11 +1,13 @@
-.sesion{
-   width: 300px;
-   height: 300px; 
-   text-align: center;
-   padding: 40px 50px;
-   margin: auto;
-   margin-top: 210px;
-
+.container{
+    display: flex;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    width: 27%;
+    height: 25%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 13%;
 }
 
 .usuario {
@@ -37,9 +39,3 @@
     width: 50%;
 }
 
-@media(max-width: 768px) {
-    .container {
-        height: 30%;
-        margin-top: 29%;
-    }
-}
