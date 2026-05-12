@@ -50,9 +50,9 @@
       <div class="card" style="width: 25rem;">
         <img src="im/zapatosrojossamba.jpg" alt="">
         <div class="card-body">
-          <h5 class="card-title">TOP CRESSIDA</h5>
-          <p class="card-text">Top cressida blanca.</p>
-          <h3>$13.000</h3>
+          <h5 class="card-title">Zapatos Samba</h5>
+          <p class="card-text">Zapatos Sambas rojos</p>
+          <h3>$50.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -61,7 +61,7 @@
     <!-- CARD 2 -->
       <div class="col-md-4 mb-4">
         <div class="card" style="width: 25rem;">
-          <img src="im/top euge.png" class="card-img-top" alt="">
+          <img src="im/zapatosnegroscampus.jpg" class="card-img-top" alt="">
           <div class="card-body">
              <h5 class="card-title">TOP euge</h5>
               <p class="card-text"> elegante con triangulos.</p>
@@ -74,7 +74,7 @@
     <!-- CARD 3 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top lillie.webp" class="card-img-top" alt="">
+        <img src="im/zapatosgrisrunning.jpg" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title">TOP LILLIE</h5>
           <p class="card-text">Elegante y liviana.</p>
@@ -87,7 +87,7 @@
      <!-- CARD 4 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top miel.png" class="card-img-top" alt="">
+        <img src="im/zapatosblanegadidas.jpg" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title">TOP MIEL</h5>
           <p class="card-text"> color miel y larga.</p>
@@ -100,7 +100,7 @@
      <!-- CARD 5 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top mowi.png" class="card-img-top" alt="">
+        <img src="im/zapatosblancosnewbalance.jpg" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title">TOP MOWI</h5>
           <p class="card-text">Top color negro elegante.</p>
@@ -113,7 +113,7 @@
      <!-- CARD 6 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top taisha.png" class="card-img-top" alt="">
+        <img src="im/zapatosazuladidas.jpg" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title">TOP TAISHA</h5>
           <p class="card-text">Para el dia a dia.</p>

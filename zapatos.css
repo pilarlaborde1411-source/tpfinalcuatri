@@ -1,0 +1,135 @@
+.card
+{
+    width: 1000px;
+    height: 800px;
+    margin-top: 50px;
+    background-color: #ffffff;
+    display: inline-block;
+    border-style: double;
+    border-color: rgb(0, 0, 0);
+    margin-left: 5px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;  
+    margin-right: 10px;
+    
+}
+
+#tnReiniciar
+{
+    margin-left: 600px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid #323231;;
+    text-align: center;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    background-color:#b0a397;;
+    width: 100px;
+    padding-left: 10px;
+    border-radius: 10%;
+    margin-right: -570px;
+}
+#carrito
+{
+    height: 3%;
+    width: 3%;
+    margin-left: 600px;
+}
+.img
+{
+    width: 100%;
+    height: 400px;
+    background-color: antiquewhite;
+}
+.card-body
+{   
+    height: 300px;
+    width: 100%;
+    padding-left: 15px;
+    padding: 10px;
+ 
+}
+body
+{
+    background-color: #ffffff;
+}
+h1
+{
+    text-align: center;
+}
+.btnSumar
+{
+    margin-left: 15px;
+    padding: 5px;
+    padding-top: -2px;
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid #323231;;
+    text-align: center;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    background-color:#b0a397;;
+    width: 100px;
+    padding-left: 10px;
+    border-radius: 10%;
+    float: left;
+}
+h3 
+{
+   margin-left: 15px;
+}
+
+footer{
+    background-color: #b0a397;
+    text-align: center;
+    color:#b0a397;
+    width: 100%;
+    clear: both;
+    margin-top: 50px;
+}
+.foot{
+    height: 50px;
+    width:100%;
+    clear: both;
+    align-items: center;
+    margin-left: -50px;
+}
+.logo:hover
+{
+    transform: scale(1.3);
+}
+.logo{
+    float:right;
+    height: 50px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 140px;
+}
+#pinterest{
+    background-image:url(im/white-pinterest-logo-png--30.png);
+}
+#twitter{
+    background-image: url(im/twitter.png);
+}
+#instagram{
+    background-image: url(im/Instagram_logo.png);
+}
+#youtube{
+    background-image: url(im/youtube-play.png);
+}
+#facebook{
+    background-image: url(im/facebook-new.png);
+}
+.Volver{
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+a{
+      text-decoration: none;
+}
