@@ -48,11 +48,11 @@
     <!-- CARD 1 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/zapatosrojossamba.jpg" alt="">
+        <img src="im/zapatosrojossamba.jpg" class="card-img-top"  alt="">
         <div class="card-body">
-          <h5 class="card-title">Zapatos Samba</h5>
+          <h5 class="card-title">Samba</h5>
           <p class="card-text">Zapatos Sambas rojos</p>
-          <h3>$50.000</h3>
+          <h3>$62.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -63,9 +63,9 @@
         <div class="card" style="width: 25rem;">
           <img src="im/zapatosnegroscampus.jpg" class="card-img-top" alt="">
           <div class="card-body">
-             <h5 class="card-title">TOP euge</h5>
-              <p class="card-text"> elegante con triangulos.</p>
-              <h3>$15.000</h3>
+             <h5 class="card-title">Campus</h5>
+              <p class="card-text"> Campus negros.</p>
+              <h3>$95.000</h3>
             <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
           </div>
         </div>
@@ -76,9 +76,9 @@
       <div class="card" style="width: 25rem;">
         <img src="im/zapatosgrisrunning.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">TOP LILLIE</h5>
-          <p class="card-text">Elegante y liviana.</p>
-          <h3>$20.000</h3>
+          <h5 class="card-title">Running</h5>
+          <p class="card-text">Running gris.</p>
+          <h3>$80.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -89,9 +89,9 @@
       <div class="card" style="width: 25rem;">
         <img src="im/zapatosblanegadidas.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">TOP MIEL</h5>
-          <p class="card-text"> color miel y larga.</p>
-          <h3>$10.000</h3>
+          <h5 class="card-title">Adidas</h5>
+          <p class="card-text"> Adidas blancas y negras.</p>
+          <h3>$49.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -102,9 +102,9 @@
       <div class="card" style="width: 25rem;">
         <img src="im/zapatosblancosnewbalance.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">TOP MOWI</h5>
-          <p class="card-text">Top color negro elegante.</p>
-          <h3>$20.000</h3>
+          <h5 class="card-title">New balance</h5>
+          <p class="card-text">New balance blanco.</p>
+          <h3>$60.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -115,9 +115,9 @@
       <div class="card" style="width: 25rem;">
         <img src="im/zapatosazuladidas.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">TOP TAISHA</h5>
-          <p class="card-text">Para el dia a dia.</p>
-          <h3>$25.000</h3>
+          <h5 class="card-title">Adidas</h5>
+          <p class="card-text">adidas SL azules</p>
+          <h3>$55.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
