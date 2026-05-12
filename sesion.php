@@ -1,3 +1,25 @@
+<?php
+    session_start();
+    include('conexion.php');
+    if(isset($_POST['nombre'])){
+        header('Location: index.php');
+    } 
+    $email = $_POST['email'];
+    $contraseña = $_POST['contraseña'];
+    $contraseñaEncriptada = md5($contraseña);
+    $sql = "SELECT * FROM usuarios WHERE email ='" . $email . " ' ";
+    $resultado = mysqli_query($conexion, $sql);
+    $datos = mysqli_fetch_assoc($resultado);
+    if(mysqli_num_rows($resultado) > 0) {
+        if($datos['contra'] == $contraseñaEncriptada){
+            header('Location: index.php');
+        }else{
+            echo"La contraseña es inválida.";
+        }
+    }else{
+        echo"No hay email asociado a la cuenta.";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +33,8 @@
     <div class="container">
         <div class="usuario"></div>
         <form method="post" action="sesion.php" class="form">
-            <input type="text"  name="nombre" required placeholder="Usuario"> <br>
-            <input type="password" name="contrasena" required placeholder="Contraseña"> <br>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="contraseña" required placeholder="Contraseña"> <br>
             <button type="submit" class="btn btn-outline-dark">Iniciar sesion</button>
         </form>
         <p>¿No tienes una cuenta?  <a href="registrarse.php">Registrate!</a></p>
