@@ -18,17 +18,17 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="inicio.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="inicio.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contactos</a>
+          <a class="nav-link" href="#">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">SUMMER SALE</a>
+          <a class="nav-link" href="#">Ofertas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Collection
+            Colecciones
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="top.php">Tops y Remeras</a></li>
