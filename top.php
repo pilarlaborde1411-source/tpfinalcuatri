@@ -32,7 +32,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
-            <li><a class="dropdown-item" href="#">Zapatos</a></li>
+            <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
             <li><a class="dropdown-item" href="#">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
