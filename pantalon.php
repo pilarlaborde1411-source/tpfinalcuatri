@@ -11,7 +11,7 @@
 <body>
    <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><h1 >ISABELLE</h1></a>
+    <a class="navbar-brand" href="#"><h1 >BUBBA STORE</h1></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,9 +38,6 @@
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
         </li>
-
-        <button id="btnReiniciar">vaciar</button>
-        <img src="im/hos.png" alt="" id="carrito"> <p id="contador">Contador:0</p>
     </ul>
 </div>
   </div>
@@ -54,8 +51,8 @@
       <div class="card" style="width: 25rem;">
         <img src="im/pantalon1.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">Traje recto</h5>
-          <p class="card-text">Pantalon de Traje Beige</p>
+          <h5 class="card-title">Jean </h5>
+          <p class="card-text">Jean Ancho Azul</p>
           <h3>$40.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
@@ -81,7 +78,7 @@
         <img src="im/pantalon3.jpg" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title">Cargo Verde</h5>
-          <p class="card-text">Pantalon Verde Caro</p>
+          <p class="card-text">Pantalon Verde Cargo</p>
           <h3>$20.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
