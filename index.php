@@ -26,7 +26,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Ofertas</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown; justify-content: center;">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Colecciones
           </a>
@@ -37,8 +37,8 @@
             <li><a class="dropdown-item" href="#">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="im/usuario.png" alt="">
+          <a class="nav-link dropdown-toggle; display: none;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img id="img_usuario" src="im/usuario.png" alt="">
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="config.php">Configuración</a></li>
