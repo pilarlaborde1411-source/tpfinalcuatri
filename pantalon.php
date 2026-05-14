@@ -18,13 +18,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="inicio.php">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ofertas.php">Ofertas</a>
+          <a class="nav-link" href="#">Ofertas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,6 +32,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="top.php">Tops y Remeras</a></li>
+      
             <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
             <li><a class="dropdown-item" href="#">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
@@ -50,8 +51,8 @@
       <div class="card" style="width: 25rem;">
         <img src="im/pantalon1.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">Wide leg jeans</h5>
-          <p class="card-text">Jean anchos azules</p>
+          <h5 class="card-title">Jean </h5>
+          <p class="card-text">Jean Ancho Azul</p>
           <h3>$40.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
@@ -63,9 +64,9 @@
         <div class="card" style="width: 25rem;">
           <img src="im/pantalon2.jpg" class="card-img-top" alt="">
           <div class="card-body">
-             <h5 class="card-title">Flared jeans</h5>
-              <p class="card-text">Jean celeste flared</p>
-              <h3>$35.000</h3>
+             <h5 class="card-title">Flare Jean</h5>
+              <p class="card-text">Jean celeste</p>
+              <h3>$25.000</h3>
             <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
           </div>
         </div>
@@ -78,7 +79,7 @@
         <div class="card-body">
           <h5 class="card-title">Cargo Verde</h5>
           <p class="card-text">Pantalon Verde Cargo</p>
-          <h3>$30.000</h3>
+          <h3>$20.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -91,7 +92,7 @@
         <div class="card-body">
           <h5 class="card-title">Calsa Flare</h5>
           <p class="card-text">Calsa flare negra</p>
-          <h3>$30.000</h3>
+          <h3></h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -100,11 +101,11 @@
      <!-- CARD 5 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/panta6.jpg" class="card-img-top" alt="">
+        <img src="im/pantalonn5.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">Pantalon de cuero recto</h5>
-          <p class="card-text">Pantalon cuero Bordo recto</p>
-          <h3>$60.000</h3>
+          <h5 class="card-title">Pantalon Jogging</h5>
+          <p class="card-text">Pantalon de jogging azul</p>
+          <h3>$20.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -113,11 +114,11 @@
      <!-- CARD 6 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/pantalon6.jpg" class="card-img-top" alt="">
+        <img src="im/panta6.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">Pantalones Track</h5>
-          <p class="card-text">Pantalones deportivos azules</p>
-          <h3>$35.000</h3>
+          <h5 class="card-title">Pantalon de Cuero</h5>
+          <p class="card-text">Pantalon de cuero recto bordo</p>
+          <h3>$25.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -137,5 +138,6 @@
         </div>
     </footer>
 </footer>
+<script src="java.js"></script>
 </body>
 </html>

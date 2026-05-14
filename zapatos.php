@@ -24,7 +24,7 @@
           <a class="nav-link" href="#">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ofertas.php">Ofertas</a>
+          <a class="nav-link" href="#">Ofertas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +33,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="top.php">Remreas y tops</a></li>
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
-            <li><a class="dropdown-item" href="camperas.php">Camperas</a></li>
+            <li><a class="dropdown-item" href="#">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
         </li>
@@ -76,8 +76,8 @@
       <div class="card" style="width: 25rem;">
         <img src="im/newbalanceblancasverdes.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">New balance</h5>
-          <p class="card-text">New balance blancas y verdes.</p>
+          <h5 class="card-title">Running</h5>
+          <p class="card-text">Running gris.</p>
           <h3>$80.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>

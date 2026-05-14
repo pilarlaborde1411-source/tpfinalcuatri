@@ -24,7 +24,7 @@
           <a class="nav-link" href="#">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ofertas.php">Ofertas</a>
+          <a class="nav-link" href="#">Ofertas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +33,11 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
             <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
+<<<<<<< Updated upstream:remera.php
             <li><a class="dropdown-item" href="camperas.php">Camperas</a></li>
+=======
+            <li><a class="dropdown-item" href="#">Camperas</a></li>
+>>>>>>> Stashed changes:top.php
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
         </li>

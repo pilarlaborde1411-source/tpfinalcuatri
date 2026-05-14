@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="pantalon.css">
+    <link rel="stylesheet" href="ofertas.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -34,7 +34,7 @@
             <li><a class="dropdown-item" href="top.php">Tops y Remeras</a></li>
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
             <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
-            <li><a class="dropdown-item" href="#">Camperas</a></li>
+            <li><a class="dropdown-item" href="camperas.php">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
         </li>
