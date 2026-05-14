@@ -25,19 +25,13 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="ofertas.php">Ofertas</a>
-          <a class="nav-link" href="#">Ofertas</a>
         </li>
         <li class="nav-item dropdown; justify-content: center;">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Colecciones
           </a>
-<<<<<<< Updated upstream
           <ul class="dropdown-menu ms-auto">
             <li><a class="dropdown-item" href="remeras.php">Remeras</a></li>
-=======
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="top.php">Tops y Remeras</a></li>
->>>>>>> Stashed changes
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
             <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
             <li><a class="dropdown-item" href="#">Camperas</a></li>
