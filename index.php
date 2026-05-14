@@ -35,6 +35,7 @@
             Colecciones
           </a>
           <ul class="dropdown-menu ms-auto">
+            <li><a class="dropdown-item" href="top.php">Remeras</a></li>
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
             <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
             <li><a class="dropdown-item" href="camperas.php">Camperas</a></li>
