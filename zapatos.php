@@ -74,7 +74,7 @@
     <!-- CARD 3 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/zapatosgrisrunning.jpg" class="card-img-top" alt="">
+        <img src="im/newbalanceblancasverdes.jpg" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title">Running</h5>
           <p class="card-text">Running gris.</p>
@@ -87,10 +87,10 @@
      <!-- CARD 4 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/zapatosblanegadidas.jpg" class="card-img-top" alt="">
+        <img src="im/adiasblancas.jpg" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title">Adidas</h5>
-          <p class="card-text"> Adidas blancas y negras.</p>
+          <p class="card-text"> Adidas blancas.</p>
           <h3>$49.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
