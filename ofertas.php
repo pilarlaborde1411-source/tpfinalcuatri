@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remeras y Tops</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="top.css">
+    <link rel="stylesheet" href="pantalon.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="inicio.php">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Nosotros</a>
@@ -31,28 +31,29 @@
             Colecciones
           </a>
           <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="top.php">Tops y Remeras</a></li>
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
             <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
-            <li><a class="dropdown-item" href="campera.php">Camperas</a></li>
+            <li><a class="dropdown-item" href="#">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
         </li>
-      </ul>
-    </div>
+    </ul>
+</div>
   </div>
 </nav>
-<h1>Tops</h1>
-    <div class="container mt-4">
+<h1>✨Ofertas</h1>
+<div class="container mt-4">
   <div class="row justify-content-center">
 
     <!-- CARD 1 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top cressida.png" class="card-img-top" alt="">
+        <img src="im/oferta 1.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">TOP CRESSIDA</h5>
-          <p class="card-text">Top cressida blanca.</p>
-          <h3>$13.000</h3>
+          <h5 class="card-title">Top Asímetrico</h5>
+          <p class="card-text">Top marrón de un hombro</p>
+          <h3>$15.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -61,11 +62,11 @@
     <!-- CARD 2 -->
       <div class="col-md-4 mb-4">
         <div class="card" style="width: 25rem;">
-          <img src="im/top euge.png" class="card-img-top" alt="">
+          <img src="im/ofer2.jpg" class="card-img-top" alt="">
           <div class="card-body">
-             <h5 class="card-title">TOP euge</h5>
-              <p class="card-text"> elegante con triangulos.</p>
-              <h3>$15.000</h3>
+             <h5 class="card-title">Conjunto Deportivo</h5>
+              <p class="card-text">Conjunto de jogging gris</p>
+              <h3>$30.000</h3>
             <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
           </div>
         </div>
@@ -74,11 +75,11 @@
     <!-- CARD 3 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top lillie.webp" class="card-img-top" alt="">
+        <img src="im/oferta3.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">TOP LILLIE</h5>
-          <p class="card-text">Elegante y liviana.</p>
-          <h3>$20.000</h3>
+          <h5 class="card-title">Shorts de Sastre</h5>
+          <p class="card-text">Shorts casuales beige</p>
+          <h3>$12.500</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -87,11 +88,11 @@
      <!-- CARD 4 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top miel.png" class="card-img-top" alt="">
+        <img src="im/oferta4.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">TOP MIEL</h5>
-          <p class="card-text"> color miel y larga.</p>
-          <h3>$10.000</h3>
+          <h5 class="card-title">Botas Negras</h5>
+          <p class="card-text">Botas con tacon negras</p>
+          <h3>$15.500</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -100,11 +101,11 @@
      <!-- CARD 5 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top mowi.png" class="card-img-top" alt="">
+        <img src="im/oferta5.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">TOP MOWI</h5>
-          <p class="card-text">Top color negro elegante.</p>
-          <h3>$20.000</h3>
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <h3>$12.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -113,11 +114,11 @@
      <!-- CARD 6 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/top taisha.png" class="card-img-top" alt="">
+        <img src="im/oferta6.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">TOP TAISHA</h5>
-          <p class="card-text">Para el dia a dia.</p>
-          <h3>$25.000</h3>
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <h3>$35.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -137,6 +138,5 @@
         </div>
     </footer>
 </footer>
-<script src="java.js"></script>
 </body>
 </html>

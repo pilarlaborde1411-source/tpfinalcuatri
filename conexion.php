@@ -4,9 +4,12 @@ $username = "root";
 $password = "";
 $dbname = "bubba";
 
-$db = new mysqli($servername, $username, $password, $dbname);
+$conexion = new mysqli($servername, $username, $password, $dbname);
 
-if($db->connect_error) {
-    die("Conexión fallida: " . $db->connect_error);
+// Check connection
+if ($conexion -> connect_error) {
+  echo "Failed to connect to MySQL: " . $conexion -> connect_error;
+  exit();
 }
+
 ?>
