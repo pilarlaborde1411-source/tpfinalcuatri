@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="zapatos.css">
+    <link rel="stylesheet" href="camperas.css">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><h1 >BUBBA STORE</h1></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,6 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="top.php">Remreas y tops</a></li>
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
-            <li><a class="dropdown-item" href="#">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
         </li>
@@ -41,18 +40,18 @@
     </div>
   </div>
 </nav>
-<h1>Zapatos</h1>
+<h1>Camperas</h1>
     <div class="container mt-4">
   <div class="row justify-content-center">
 
     <!-- CARD 1 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/zapatosrojossamba.jpg" class="card-img-top"  alt="">
+        <img src="im/camperamilitar.jpg" class="card-img-top"  alt="">
         <div class="card-body">
-          <h5 class="card-title">Samba</h5>
-          <p class="card-text">Zapatos Sambas rojos</p>
-          <h3>$62.000</h3>
+          <h5 class="card-title">Carhartt</h5>
+          <p class="card-text">Carhartt campera militar</p>
+          <h3>$120.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -61,11 +60,11 @@
     <!-- CARD 2 -->
       <div class="col-md-4 mb-4">
         <div class="card" style="width: 25rem;">
-          <img src="im/zapatosnegroscampus.jpg" class="card-img-top" alt="">
+          <img src="im/camperanegra.jpg" class="card-img-top" alt="">
           <div class="card-body">
-             <h5 class="card-title">Campus</h5>
-              <p class="card-text"> Campus negros.</p>
-              <h3>$95.000</h3>
+             <h5 class="card-title">Campera Holder</h5>
+              <p class="card-text">negra.</p>
+              <h3>$43.000</h3>
             <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
           </div>
         </div>
@@ -74,11 +73,11 @@
     <!-- CARD 3 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/newbalanceblancasverdes.jpg" class="card-img-top" alt="">
+        <img src="im/camperamarron.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">New balance</h5>
-          <p class="card-text">New balance blancas y verdes.</p>
-          <h3>$80.000</h3>
+          <h5 class="card-title">Carhartt</h5>
+          <p class="card-text">Carhartt azul.</p>
+          <h3>$60.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -87,11 +86,11 @@
      <!-- CARD 4 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/adiasblancas.jpg" class="card-img-top" alt="">
+        <img src="im/camperama.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">Adidas</h5>
-          <p class="card-text"> Adidas blancas.</p>
-          <h3>$49.000</h3>
+          <h5 class="card-title">Campera Stefan</h5>
+          <p class="card-text"> Marron.</p>
+          <h3>$55.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -100,11 +99,11 @@
      <!-- CARD 5 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/zapatosblancosnewbalance.jpg" class="card-img-top" alt="">
+        <img src="im/nycblanca.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">New balance</h5>
-          <p class="card-text">New balance blanco.</p>
-          <h3>$60.000</h3>
+          <h5 class="card-title">NYC</h5>
+          <p class="card-text">blanco.</p>
+          <h3>$45.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -113,11 +112,11 @@
      <!-- CARD 6 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
-        <img src="im/zapatosazuladidas.jpg" class="card-img-top" alt="">
+        <img src="im/camperagriss.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title">Adidas</h5>
-          <p class="card-text">adidas SL azules</p>
-          <h3>$55.000</h3>
+          <h5 class="card-title">Campera Iris</h5>
+          <p class="card-text">gris</p>
+          <h3>$30.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -137,6 +136,5 @@
         </div>
     </footer>
 </footer>
-<script src="java.js"></script>
 </body>
 </html>
