@@ -15,6 +15,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <!--Menú-->
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -26,25 +27,31 @@
         <li class="nav-item">
           <a class="nav-link" href="ofertas.php">Ofertas</a>
         </li>
-        <li class="nav-item dropdown; justify-content: center;">
+
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Colecciones
           </a>
-          <ul class="dropdown-menu ms-auto">
+           <ul class="dropdown-menu ms-auto">
             <li><a class="dropdown-item" href="remeras.php">Remeras</a></li>
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
             <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
             <li><a class="dropdown-item" href="#">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
-          <a class="nav-link dropdown-toggle; display: none;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img id="img_usuario" src="im/usuario.png" alt="">
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="config.php">Configuración</a></li>
-            <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
-          </ul>
         </li>
+        <!--Foto de perfil de usuario-->
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle; display: none;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img id="img_usuario" src="im/usuario.png" alt="Usuario" class="rounded-circle" width="40" height="40">
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="config.php">Configuración</a></li>
+              <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
       </ul>
     </div>
   </div>
