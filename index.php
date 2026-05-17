@@ -1,3 +1,12 @@
+<?php
+include 'conexion.php';
+session_start();
+if(!isset($_SESSION['usuario'])){
+  header('Location: sesion.php');
+  exit;
+}
+$usuario = $_SESSION['usuario'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,83 +19,89 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><h1>BUBBA STORE</h1></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!--Menú-->
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ofertas.php">Ofertas</a>
-        </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Colecciones
-          </a>
-           <ul class="dropdown-menu ms-auto">
-            <li><a class="dropdown-item" href="remeras.php">Remeras</a></li>
-            <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
-            <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
-            <li><a class="dropdown-item" href="#">Camperas</a></li>
-            <li><a class="dropdown-item" href="#">Joyas</a></li>
-          </ul>
-        </li>
-        <!--Foto de perfil de usuario-->
-        <ul class="navbar-nav ms-auto">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><h1>BUBBA STORE</h1></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <!-- Menú principal -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.php">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ofertas.php">Ofertas</a>
+          </li>
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle; display: none;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img id="img_usuario" src="im/usuario.png" alt="Usuario" class="rounded-circle" width="40" height="40">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+              data-bs-toggle="dropdown">
+              Colecciones
             </a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="remeras.php">Remeras</a></li>
+              <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
+              <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
+              <li><a class="dropdown-item" href="camperas.php">Camperas</a></li>
+              <li><a class="dropdown-item" href="joyas.php">Joyas</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Usuario a la derecha -->
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+              <img src="im/usuario.png" alt="Usuario"class="rounded-circle" width="40" height="40">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="config.php">Configuración</a></li>
               <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
             </ul>
           </li>
         </ul>
-      </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+
 <div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
+
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="im/hhh.webp" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
       </div>
     </div>
+
     <div class="carousel-item">
       <img src="im/tt.webp" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
+      <div class="carousel-caption d-none d-md-block"></div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+
+  <button class="carousel-control-prev" style="width: 5%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+
+  <button class="carousel-control-next" style="width: 5%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
     <div class="container mt-4">
   <div class="row justify-content-center">
-
     <!-- CARD 1 -->
     <div class="col-md-4 mb-4">
       <div class="card" style="width: 25rem;">
@@ -181,3 +196,6 @@
 </footer>
 </body>
 </html>
+<?php 
+  $conexion->close();
+?>

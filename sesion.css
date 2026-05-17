@@ -32,10 +32,12 @@
 .form input {
     width: 90%;
     height: 38px;
-    margin: -2%;
 }
 
 .form button {
     width: 50%;
 }
 
+.error {
+    color: red;
+}
