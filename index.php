@@ -58,7 +58,7 @@ $usuario = $_SESSION['usuario'];
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-              <img src="im/usuario.png" alt="Usuario"class="rounded-circle" width="40" height="40">
+              <img src="im/usuario.png" alt="Usuario"class="rounded-circle" width="40" height="40"></img>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="config.php">Configuración</a></li>
@@ -66,10 +66,18 @@ $usuario = $_SESSION['usuario'];
             </ul>
           </li>
         </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+              <img src="im/carrito.png" alt="carrito" width="40" height="40"></img>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
-
 <div id="carouselExampleCaptions" class="carousel slide">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -182,17 +190,14 @@ $usuario = $_SESSION['usuario'];
   </div>
 </div>
 <footer class="pie"> 
-  <footer>
-        <a href="#navbarNavDropdown"><p class="Volver">Volver arriba</P></a>
-        <hr>
-        <div class="foot" id="redes">
-            <a href=""><div id="pinterest" class="logo"></div></a>
-            <a href=""><div id="twitter"  class="logo"></div></a>
-            <a href=""><div id="instagram" class="logo"></div>
-            <a href=""><div id="youtube" class="logo"></div></a>
-            <a href=""><div id="facebook" class="logo"></div></a>
-        </div>
-    </footer>
+  <a href="#navbarNavDropdown"><p class="Volver">Volver arriba</p></a>
+  <div class="foot" id="redes">
+    <a href=""><div id="pinterest" class="logo"></div></a>
+    <a href=""><div id="twitter" class="logo"></div></a>
+    <a href=""><div id="instagram" class="logo"></div>
+    <a href=""><div id="youtube" class="logo"></div></a>
+    <a href=""><div id="facebook" class="logo"></div></a>
+  </div>
 </footer>
 </body>
 </html>

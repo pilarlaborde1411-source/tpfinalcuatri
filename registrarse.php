@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form method="POST" action="registrarse.php" class="form">
             <input class="mb-1.5" style="width: 95%; height: 38px;" type="text" name="nombre" placeholder="Usuario" required>
             <input class="mb-1.5" style="width: 95%; height: 38px;" type="email" name="email" placeholder="Email" required>
-            <?php if($msjemail != ""){?> <p class="mb-1" style="font-size:12px; color:red; text-align:left; width:100%;"> <?php echo $msjemail ?> </p> <?php }; ?>
+            <?php if($msjemail != ""){?> <p class="mb-1" style="font-size:12px; color:red; text-align:left; width:95%;"> <?php echo $msjemail ?> </p> <?php }; ?>
             <input class="mb-1.5" style="width: 95%; height: 38px;" type="password" name="contrasena" placeholder="Contraseña" required>
             <button type="submit" class="btn btn-outline-dark">Crear cuenta</button>
         </form>
