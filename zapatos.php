@@ -24,17 +24,17 @@
           <a class="nav-link" href="#">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Ofertas</a>
+          <a class="nav-link" href="ofertas.php">Ofertas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Colecciones
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="top.php">Remreas y tops</a></li>
+            <li><a class="dropdown-item" href="remeras.php">Remreas y tops</a></li>
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
-            <li><a class="dropdown-item" href="#">Camperas</a></li>
-            <li><a class="dropdown-item" href="#">Joyas</a></li>
+            <li><a class="dropdown-item" href="camperas.php">Camperas</a></li>
+            <li><a class="dropdown-item" href="joyas.php">Joyas</a></li>
           </ul>
         </li>
       </ul>

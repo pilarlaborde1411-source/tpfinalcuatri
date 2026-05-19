@@ -24,7 +24,7 @@
           <a class="nav-link" href="#">Nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Ofertas</a>
+          <a class="nav-link" href="ofertas.php">Ofertas</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,6 +32,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="remera.php">Tops y Remeras</a></li>
+             <li><a class="dropdown-item" href="pantalon.php">pantalones</a></li>
             <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
             <li><a class="dropdown-item" href="camperas.php">Camperas</a></li>
           </ul>
