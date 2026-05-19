@@ -22,11 +22,9 @@ $usuario = $_SESSION['usuario'];
 
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><h1>BUBBA STORE</h1></a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <!-- Menú principal -->
         <ul class="navbar-nav">
@@ -39,7 +37,6 @@ $usuario = $_SESSION['usuario'];
           <li class="nav-item">
             <a class="nav-link" href="ofertas.php">Ofertas</a>
           </li>
-
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button"
               data-bs-toggle="dropdown">
@@ -54,7 +51,7 @@ $usuario = $_SESSION['usuario'];
             </ul>
           </li>
         </ul>
-        <!-- Usuario a la derecha -->
+        <!-- Usuario -->
         <ul class="navbar-nav ms-auto">
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
@@ -66,13 +63,15 @@ $usuario = $_SESSION['usuario'];
             </ul>
           </li>
         </ul>
+        <!-- Carrito -->
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
               <img src="im/carrito.png" alt="carrito" width="40" height="40"></img>
             </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-            </ul>
+            <div class>
+
+            </div>
           </li>
         </ul>
       </div>
