@@ -39,7 +39,7 @@
         <div class="usuario mb-2"></div>
         <form method="post" action="sesion.php" class="form" style="width: 30%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: auto;">
             <input class="mb-2" style="width: 100%; height: 38px;" type="email" name="email" placeholder="Email" required>
-            <?php if($msjemail != ""){?> <p style="font-size:12px; color:red; text-align:left; width:100%;"> <?php echo $msjemail ?> </p> <?php }; ?>
+            <?php if($msjemail != ""){?> <p class="mb-2" style="font-size:12px; color:red; text-align:left; width:100%;"> <?php echo $msjemail ?> </p> <?php }; ?>
             <input  class="mb-2" style="width: 100%; height: 38px;" type="password" name="contrasena" placeholder="Contraseña">
             <?php if($msjcontrasenia != ""){?> <p class="mb-2" style="font-size:12px; color:red; text-align:left; margin:0; width:100%;"> <?php echo $msjcontrasenia ?> </p> <?php }; ?>
             <button type="submit" class="btn btn-outline-dark" style="width: 50%;">Iniciar sesion</button>
