@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="inicio.php">Inicio</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Nosotros</a>
@@ -31,9 +31,9 @@
             Colecciones
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="top.php">Tops y Remeras</a></li>
+            <li><a class="dropdown-item" href="remera.php">Tops y Remeras</a></li>
             <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
-            <li><a class="dropdown-item" href="#">Camperas</a></li>
+            <li><a class="dropdown-item" href="camperas.php">Camperas</a></li>
             <li><a class="dropdown-item" href="#">Joyas</a></li>
           </ul>
         </li>
