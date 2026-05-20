@@ -50,6 +50,15 @@ $usuario = $_SESSION['usuario'];
               <li><a class="dropdown-item" href="joyas.php">Joyas</a></li>
             </ul>
           </li>
+          <li class="nav-item">
+            <?php
+              if(isset($_SESSION['usuario'])){
+                if($_SESSION['admin'] == 1){
+                  echo "<a class='nav-link' href='panel.php'>Panel de administración</a>";
+                }
+              }
+            ?>
+          </li>
         </ul>
         <!-- Usuario -->
         <ul class="navbar-nav ms-auto">
@@ -77,7 +86,7 @@ $usuario = $_SESSION['usuario'];
       </div>
     </div>
   </nav>
-<div id="carouselExampleCaptions" class="carousel slide">
+<div id="carouselExampleCaptions" class="carousel slide position-relative">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -96,18 +105,17 @@ $usuario = $_SESSION['usuario'];
     </div>
   </div>
 
-  <button class="carousel-control-prev" style="width: 5%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+  <button class="carousel-control-prev" style="width: 2%" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
 
-  <button class="carousel-control-next" style="width: 5%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+  <button class="carousel-control-next" style="width: 2%" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-    <div class="container mt-4">
+<div class="container mt-2">
   <div class="row justify-content-center">
     <!-- CARD 1 -->
     <div class="col-md-4 mb-4">

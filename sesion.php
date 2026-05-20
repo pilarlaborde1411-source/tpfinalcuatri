@@ -12,8 +12,9 @@
         $resultado = mysqli_query($conexion, $sql);
         if(mysqli_num_rows($resultado) > 0) {
             $datos = mysqli_fetch_assoc($resultado);
-            if(password_verify($contrasena, $datos['contra'])){
+            if(password_verify($contrasena, $datos['contra'])){   
                 $_SESSION['usuario'] = $datos['nombre'];
+                $_SESSION['admin'] = $datos['admin'];
                 header('location: index.php');
                 exit;
             }else{
