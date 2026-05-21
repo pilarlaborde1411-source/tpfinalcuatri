@@ -13,7 +13,7 @@
 
     if (mysqli_num_rows ($resultado) > 0){
         while($datos = mysqli_fetch_assoc($resultado)){
-            echo "<h1>" . $datos["nombre"]. "</h1>".  
+            echo "<h1>" . $datos["nombre"]. "</h1>" .  "<br>" . $datos['precio'] . "<br>" . $datos['talle'] . 
             "<img src'".$datos['imagen']."'>";
         }
     }
