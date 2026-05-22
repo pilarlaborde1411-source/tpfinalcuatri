@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="detalle.css">
 </head>
 <body>
     <?php
@@ -13,8 +14,8 @@
 
     if (mysqli_num_rows ($resultado) > 0){
         while($datos = mysqli_fetch_assoc($resultado)){
-            echo "<h1>" . $datos["nombre"]. "</h1>" .  "<br>" . $datos['precio'] . "<br>" . $datos['talle'] . 
-            "<img src'".$datos['imagen']."'>";
+            echo "<div class='col-md-4 mb-4'> <h1> ". $datos['nombre']." </h1>  <br> ". $datos['precio'] ." <br> ". $datos['id_talle'] ." </div> 
+             <div class='imagen'><img src='" . $datos['imagen'] . "' ></div>";
         }
     }
     ?>

@@ -1,7 +1,6 @@
 <?php
 include ('conexion.php');
-//$categoria= $_GET['id_categoria'];
-$categoria=1;
+$categoria= $_GET['id_categoria'];
 $sql="SELECT *  FROM producto WHERE id_categoria ='" . $categoria."'";
 $resultado = mysqli_query($conexion,$sql);
 if(mysqli_num_rows($resultado)>0){
