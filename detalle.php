@@ -12,8 +12,8 @@
     $resultado = mysqli_query($conexion,$sql);
     if (mysqli_num_rows ($resultado) > 0){
         while($datos = mysqli_fetch_assoc($resultado)){
-            echo "<div class='col-md-4 mb-4'> <h1> ". $datos['nombre']." </h1>  <br> ". $datos['precio'] ." <br> ". $datos['id_talle'] ." </div> 
-             <div class='imagen'><img src='" . $datos['imagen'] . "' ></div>";
+            echo "<div style='width: 600px; height: 600px; background-color:red; float:right; margin:5%;'> <h1> ". $datos['nombre']." </h1>  <br> ". $datos['precio'] ." <br> ". $datos['id_talle'] ." </div> 
+             <div> <img  style='width: 600px; height: 600px; margin-top: 5%; float:left; border: 2px solid #000;' src='" . $datos['imagen'] . "'> </div>";
         }
     }
     ?>
