@@ -32,7 +32,6 @@
           </a>
           <ul class='dropdown-menu'>
             <li><a class='dropdown-item' href='top.php'>Tops y Remeras</a></li>
-      
             <li><a class='dropdown-item' href='zapatos.php'>Zapatos</a></li>
             <li><a class='dropdown-item' href='#'>Camperas</a></li>
             <li><a class='dropdown-item' href='#'>Joyas</a></li>
@@ -44,16 +43,19 @@
 </nav>
     <?php
     include ('conexion.php');
-    $sql = "SELECT * FROM producto";
+    $sql = "SELECT 
+    p.id, p.nombre, p.precio, p.id_talle, p.imagen, p.id_categoria, t.talle AS talle FROM producto p INNER JOIN talle t ON p.id_talle = t.id";
     $resultado = mysqli_query($conexion,$sql);
     if (mysqli_num_rows ($resultado) > 0){
         while($datos = mysqli_fetch_assoc($resultado)){
             echo "
-            <div style='width: 500px; height: 500px;  float:right; margin:5%; font-size: 25px; padding: 5%; '> <h1 style='font-size: 50px;'> ". $datos['nombre']." </h1>  <br> ". $datos['precio'] ." <br> Talle: ". $datos['id_talle'] ." <hr class='linea'> <br> <div style='margin-top: 35%; margin-left: 25%;'> <button class='btnSumar btn btn-primary' onclick='comprar()'>Comprar</button> </div> </div> 
-             <div> <img style='width: 600px; height: 600px; margin-top: 5%; float:left; border: 2px solid #000; margin: 5%; margin-left: 10%;' src='" . $datos['imagen'] . "'> </div>";
-            
+            <div style='width: 500px; height: 500px;  float:right; margin:5%; font-size: 25px; padding: 5%; font-family: Simple Dreams; '> <h1 style='font-size: 50px;'> ". $datos['nombre']." </h1>  <br> ". $datos['precio'] ." <br> Talle: ". $datos['talle'] ." <hr class='linea'> <br> <div style='margin-top: 35%; margin-left: 25%;'> <button class='btnSumar btn btn-primary' onclick='comprar()'>Comprar</button> </div> </div> 
+             <div> <img style='width: 500px; height: 500px; margin-top: 5%; float:left; border: 2px solid #000; margin: 5%; margin-left: 10%;' src='" . $datos['imagen'] . "'> </div>";
+            echo "<a href='categoria.php?id_categoria=" . $datos['id_categoria'] . "'><button style='margin-left: 5%; margin-top: 2%;'>←</button></a>";
         }
     }
+
+    
     ?>
     <footer class="pie"> 
   <footer>

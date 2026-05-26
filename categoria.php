@@ -1,10 +1,10 @@
 <?php
 include ('conexion.php');
 $categoria= $_GET['id_categoria'];
-$sql="SELECT *  FROM producto WHERE id_categoria ='" . $categoria."'";
+$sql="SELECT 
+    p.id, p.nombre, p.precio, p.id_talle, p.imagen, p.id_categoria, c.nombre AS categoria FROM producto p INNER JOIN talle t ON p.id_talle = t.id INNER JOIN categoria c ON p.id_categoria = c.id WHERE p.id_categoria = $categoria";
 $resultado = mysqli_query($conexion,$sql);
 if(mysqli_num_rows($resultado)>0){
-    print_r(mysqli_num_rows($resultado));
     while ($productos=mysqli_fetch_assoc($resultado)) {
         echo "
         <!DOCTYPE html>
@@ -19,7 +19,7 @@ if(mysqli_num_rows($resultado)>0){
         </head>
         <body>
         
-           <h1>".$categoria."</h1>
+           <h1>".$productos['categoria']."</h1>
             <div class='col-md-4 mb-4'>
             <div class='card' style='width: 25rem;'>
                 <img src='".$productos['imagen']."' class='card-img-top' alt=''>
