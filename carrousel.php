@@ -1,0 +1,39 @@
+<?php
+    include 'conexion.php';
+    $resultado = $conexion -> query("SELECT * FROM carrusel")
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <title>Editar Carrousel</title>
+</head>
+<body>
+    <div class="m-1">
+        <h3 class="font-monospace">Editar carrousel</h3>
+        <?php while($row = $resultado->fetch_assoc()):?>
+            <div >
+                <?php if($row['imagen']){?>
+                    <img style='width: 30%; height: 20%;' src='im/<?php echo $row['imagen']?>' alt='imagen'>
+                    <form action='' method='POST' style='width: 30%;'>
+                        <input hidden type='number' name='id' value='<?php echo $row['id'] ?>'>
+                        <label for="editar">Insertar nueva imágen</label> <br>
+                        <input type="file" accept="im/*" name="editar" required class="mb-2" style="height: 38px;"> <br>
+                        <button type='submit' class="btn btn-outline-dark">Enviar</button>
+                        <form action='borrar.php' method='POST' style='width: 30%;'>
+                            <input hidden type='number' name='id' value='<?php echo $row['id'] ?>'>
+                            <button type='submit' class="btn btn-outline-dark">Borrar</button>
+                        </form>
+                    </form> <br>
+                <?php } ?>
+            </div>
+        <?php endwhile; ?>
+    </div>
+</body>
+</html>
+<?php 
+    $conexion->close();
+?>

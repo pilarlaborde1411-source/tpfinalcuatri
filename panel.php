@@ -18,14 +18,14 @@
     <title>Agregar producto</title>
 </head>
 <body>
-    <div style="width: 100%; height:25%;" >
+    <div style="width: 100%; height:25%;">
         <h3 class="font-monospace">Agregar producto</h3>
-        <form action="panel.php" method="POST" style="width: 100%; ">
+        <form action="panel.php" method="POST" style="width: 100%;">
             <input type="text" name="nombre" class="mb-2" style="height: 38px;" placeholder="Ingresa el nombre">
             <input type="text" name="precio" class="mb-2" style="height: 38px;" placeholder="Ingresa el precio">
             <label for="talle" class="mb-2">Seleccionar talle</label>
             <select name="talle" class="mb-2" style="height: 38px;">
-                <?php 
+            <?php 
                 $sql_select = "SELECT * FROM talle";
                 $resultado = mysqli_query($conexion, $sql_select);
                 while ($row = $resultado->fetch_assoc()): ?>
@@ -34,12 +34,12 @@
             </select>
             <label for="categoria" class="mb-2">Seleccionar categoría</label>
             <select name="categoria" class="mb-2" style="height: 38px;"> 
-                <option value="pantalon">Pantalon</option>
-                <option value="remera">Remera</option>
-                <option value="top">Top</option>
-                <option value="campera">Campera</option>
-                <option value="zapatos">Zapatos</option>
-                <option value="joyas">Joyas</option>
+                <?php 
+                    $sql_select = "SELECT * FROM categoria";
+                    $resultado = mysqli_query($conexion, $sql_select);
+                    while ($row = $resultado->fetch_assoc()): ?>
+                        <option value="<?$row['id']?>"><?$row['nombre']?></option>
+                    <?php endwhile; ?>
             </select>
             <label for="img" class="mb-2">Insertar imágen</label>
             <input type="file" accept="im/*" name="img" class="mb-2" style="height: 38px;"> <br>
