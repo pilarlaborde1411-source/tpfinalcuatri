@@ -1,11 +1,11 @@
 <?php
-include 'conexion.php';
-session_start();
-if(!isset($_SESSION['usuario'])){
+  include 'conexion.php';
+  session_start();
+  if(!isset($_SESSION['usuario'])){
   header('Location: sesion.php');
   exit;
-}
-$usuario = $_SESSION['usuario'];
+  }
+  $usuario = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -86,7 +86,16 @@ $usuario = $_SESSION['usuario'];
       </div>
     </div>
   </nav>
-<div id="carouselExampleCaptions" class="carousel slide position-relative">
+  <div id="carouselExampleCaptions" class="carousel slide position-relative">
+  <?php
+    if(isset($_SESSION['usuario'])){
+      if($_SESSION['admin'] == 1){
+        echo "<form action='carrousel'> <button type='submit' class='btn position-absolute top-0 end-0 m-3'style='z-index: 10; background: rgba(255,255,255,0.7);'>
+          <img src='im/editar.png' width='40' height='40'>
+        </button></form>";
+      }
+    }
+  ?>
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -114,98 +123,17 @@ $usuario = $_SESSION['usuario'];
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
-<div class="container mt-2">
-  <div class="row justify-content-center">
-    <!-- CARD 1 -->
-    <div class="col-md-4 mb-4">
-      <div class="card" style="width: 25rem;">
-        <img src="im/pantalonbei.jpg" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">PANTALON CLASSIC</h5>
-          <p class="card-text">Pantalon clasico color beige.</p>
-          <h3>$20.000</h3>
-          <button class="btnSumar btn btn-primary">Comprar</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 2 -->
-      <div class="col-md-4 mb-4">
-        <div class="card" style="width: 25rem;">
-          <img src="im/plaid-midi1-baja-6614256490bcf0b4b217152084470784-1024-1024.jpg" class="card-img-top" alt="">
-          <div class="card-body">
-             <h5 class="card-title">POLLERA ISABELLE</h5>
-              <p class="card-text">Pollera elegante con triangulos.</p>
-              <h3>$15.000</h3>
-            <button class="btnSumar btn btn-primary">Comprar</button>
-          </div>
-        </div>
-      </div>
-
-    <!-- CARD 3 -->
-    <div class="col-md-4 mb-4">
-      <div class="card" style="width: 25rem;">
-        <img src="im/sporty-jacket1-f82ee07b98265947e917152087871024-1024-1024.jpg" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">CAMPERA SPORTY</h5>
-          <p class="card-text">Campera deportiva liviana.</p>
-          <h3>$20.000</h3>
-          <button class="btnSumar btn btn-primary">Comprar</button>
-        </div>
-      </div>
-    </div>
-
-     <!-- CARD 4 -->
-    <div class="col-md-4 mb-4">
-      <div class="card" style="width: 25rem;">
-        <img src="im/Falda bora.png" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">FALDA BORA</h5>
-          <p class="card-text">Falda blanca y larga.</p>
-          <h3>$15.000</h3>
-          <button class="btnSumar btn btn-primary">Comprar</button>
-        </div>
-      </div>
-    </div>
-
-     <!-- CARD 5 -->
-    <div class="col-md-4 mb-4">
-      <div class="card" style="width: 25rem;">
-        <img src="im/Jean struck.png" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">JEAN STRUCK</h5>
-          <p class="card-text">Jean color azul.</p>
-          <h3>$40.000</h3>
-          <button class="btnSumar btn btn-primary">Comprar</button>
-        </div>
-      </div>
-    </div>
-
-     <!-- CARD 6 -->
-    <div class="col-md-4 mb-4">
-      <div class="card" style="width: 25rem;">
-        <img src="im/lusa nema.png" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title">BLUSA NEMA</h5>
-          <p class="card-text">Blusa amarilla liviana.</p>
-          <h3>$25.000</h3>
-          <button class="btnSumar btn btn-primary">Comprar</button>
-        </div>
-      </div>
-    </div>
   </div>
-</div>
-<footer class="pie"> 
-  <a href="#navbarNavDropdown"><p class="Volver">Volver arriba</p></a>
+  <footer> 
   <div class="foot" id="redes">
-    <a href=""><div id="pinterest" class="logo"></div></a>
-    <a href=""><div id="twitter" class="logo"></div></a>
-    <a href=""><div id="instagram" class="logo"></div>
-    <a href=""><div id="youtube" class="logo"></div></a>
-    <a href=""><div id="facebook" class="logo"></div></a>
+    <a href=""><img src="im/white-pinterest-logo-png--30.png" alt="" class="logo"></a>
+    <a href=""><img src="im/twitter.png" alt="" class="logo"></a>
+    <a href=""><img src="im/Instagram_logo.png" alt="" class="logo"></a>
+    <a href=""><img src="im/youtube-play.png" alt="" class="logo"></a>
+    <a href=""><img src="im/facebook-new.png" alt="" class="logo"></a>
   </div>
-</footer>
+  </footer>
+  </div>
 </body>
 </html>
 <?php 

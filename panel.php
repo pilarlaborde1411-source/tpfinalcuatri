@@ -1,5 +1,12 @@
 <?php
     include 'conexion.php';
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $nombre = $_POST['nombre'];
+        $precio = $_POST['precio'];
+        $talle = $_POST['talle'];
+        $categoria = $_POST['categoria'];
+        $img = null;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,18 +18,36 @@
     <title>Agregar producto</title>
 </head>
 <body>
-    <div class="d-flex flex-column text-black justify-content-center align-items-center mx-auto" style="width:27%; height:25%; margin-top:13%;">
-        <h1>Agregar producto</h1>
-        <form action="agregar.php" method="POST" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: auto;">
-            <input type="text" name="nombre" class="mb-2" style="width: 100%; height: 38px;" placeholder="Insertar nombre">
-            <input type="text" name="precio" class="mb-2" style="width: 100%; height: 38px;" placeholder="Insertar precio">
-            <input type="text" name="talle" class="mb-2" style="width: 100%; height: 38px;" placeholder="Insertar Talle(XS, S, M, L, XL, XXL)">
-            <label for="img" class="mb-2" style="width: 100%;">Insertar imágen</label>
-            <input type="file" accept="im/*" name="img" class="mb-2" style="width: 100%; height: 38px;">
-            <button type="submit" class="btn btn-outline-dark" style="width: 50%;">Enviar</button>
+    <div style="width: 100%; height:25%;" >
+        <h3 class="font-monospace">Agregar producto</h3>
+        <form action="panel.php" method="POST" style="width: 100%; ">
+            <input type="text" name="nombre" class="mb-2" style="height: 38px;" placeholder="Ingresa el nombre">
+            <input type="text" name="precio" class="mb-2" style="height: 38px;" placeholder="Ingresa el precio">
+            <label for="talle" class="mb-2">Seleccionar talle</label>
+            <select name="talle" class="mb-2" style="height: 38px;">
+                <?php 
+                $sql_select = "SELECT * FROM talle";
+                $resultado = mysqli_query($conexion, $sql_select);
+                while ($row = $resultado->fetch_assoc()): ?>
+                   <option value="<?$row['id']?>"><?$row['talle']?></option>
+                <?php endwhile; ?>
+            </select>
+            <label for="categoria" class="mb-2">Seleccionar categoría</label>
+            <select name="categoria" class="mb-2" style="height: 38px;"> 
+                <option value="pantalon">Pantalon</option>
+                <option value="remera">Remera</option>
+                <option value="top">Top</option>
+                <option value="campera">Campera</option>
+                <option value="zapatos">Zapatos</option>
+                <option value="joyas">Joyas</option>
+            </select>
+            <label for="img" class="mb-2">Insertar imágen</label>
+            <input type="file" accept="im/*" name="img" class="mb-2" style="height: 38px;"> <br>
+            <button type="submit" class="btn btn-outline-dark">Enviar</button>
         </form>
-        <h1>Editar carrusel</h1>
-        <h1></h1>
     </div>
 </body>
 </html>
+<?php 
+    $conexion->close();
+?>
