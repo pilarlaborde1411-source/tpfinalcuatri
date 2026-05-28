@@ -44,15 +44,39 @@
     <?php
     include ('conexion.php');
     $sql = "SELECT 
-    p.id, p.nombre, p.precio, p.id_talle, p.imagen, p.id_categoria, t.talle AS talle FROM producto p INNER JOIN talle t ON p.id_talle = t.id";
+    p.id, p.nombre, p.precio, p.id_talle, p.imagen, p.id_categoria, p.color, t.talle AS talle FROM producto p INNER JOIN talle t ON p.id_talle = t.id WHERE p.id = " . $_GET['id_producto'];
     $resultado = mysqli_query($conexion,$sql);
     if (mysqli_num_rows ($resultado) > 0){
-        while($datos = mysqli_fetch_assoc($resultado)){
-            echo "
-            <div style='width: 500px; height: 500px;  float:right; margin:5%; font-size: 25px; padding: 5%; font-family: Simple Dreams; '> <h1 style='font-size: 50px;'> ". $datos['nombre']." </h1>  <br> ". $datos['precio'] ." <br> Talle: ". $datos['talle'] ." <hr class='linea'> <br> <div style='margin-top: 35%; margin-left: 25%;'> <button class='btnSumar btn btn-primary' onclick='comprar()'>Comprar</button> </div> </div> 
-             <div> <img style='width: 500px; height: 500px; margin-top: 5%; float:left; border: 2px solid #000; margin: 5%; margin-left: 10%;' src='" . $datos['imagen'] . "'> </div>";
-            echo "<a href='categoria.php?id_categoria=" . $datos['id_categoria'] . "'><button style='margin-left: 5%; margin-top: 2%;'>←</button></a>";
-        }
+      while($datos = mysqli_fetch_assoc($resultado)){
+        ?>
+        <div style='width: 550px; height: 550px; float:right; margin:5%; font-size: 25px; padding-top: 5%; font-family: Simple Dreams;'>
+          <h1 style='font-size: 50px;'><?php echo $datos['nombre']; ?></h1>
+          <br>
+          $ <?php echo $datos['precio']; ?>
+          <br>
+          <select name='talle' class='mb-2' style='height: 38px;'>
+            <?php
+              $sql_select = "SELECT * FROM talle";
+              $resultado_talle = mysqli_query($conexion, $sql_select);
+              while ($row = mysqli_fetch_assoc($resultado_talle)) {
+                echo "<option value='" . $row['id'] . "'>" . $row['talle'] . "</option>";
+              }
+            ?>
+          </select>
+          <br>
+          Color: <?php echo $datos['color']; ?>
+          <hr class='linea'>
+          <br>
+          <div style='margin-top: 30%; margin-left: 25%; '>
+            <button class='btnSumar btn btn-primary' onclick='comprar()'>Agregar al Carrito</button>
+          </div>
+        </div>
+        <div>
+          <img style='width: 400px; height: 550px; margin-top: 5%; float:left; border: 2px solid #000; margin: 5%; margin-left: 15%;' src='<?php echo $datos['imagen']; ?>'>
+        </div>
+        <a href='categoria.php?id_categoria=<?php echo $datos['id_categoria']; ?>'><button style='margin-left: 5%; margin-top: 2%;'>←</button></a>
+        <?php
+      }
     }
 
     

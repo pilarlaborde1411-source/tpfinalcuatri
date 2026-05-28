@@ -20,7 +20,7 @@ if(mysqli_num_rows($resultado)>0){
         <body>
         
            <h1>".$productos['categoria']."</h1>
-            <div class='col-md-4 mb-4'>
+            <div class='col-md-4 mb-4'> <a href='detalle.php?id_producto=".$productos['id']."' style='text-decoration: none; color: black;'>
             <div class='card' style='width: 25rem;'>
                 <img src='".$productos['imagen']."' class='card-img-top' alt=''>
                 <div class='card-body'>
