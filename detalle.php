@@ -49,11 +49,11 @@
     if (mysqli_num_rows ($resultado) > 0){
       while($datos = mysqli_fetch_assoc($resultado)){
         ?>
-        <div style='width: 550px; height: 550px; float:right; margin:5%; font-size: 25px; padding-top: 5%; font-family: Simple Dreams;'>
+        <div style='width: 550px; height: 550px; float:right; margin:5%; font-size: 25px; padding-top: 5%; font-family: Simple Dreams; '>
           <h1 style='font-size: 50px;'><?php echo $datos['nombre']; ?></h1>
-          <br>
+          <br style='margin-bottom: 20px';>
           $ <?php echo $datos['precio']; ?>
-          <br>
+          <br style='margin-bottom: 20px;'>
           <select name='talle' class='mb-2' style='height: 38px;'>
             <?php
               $sql_select = "SELECT * FROM talle";
@@ -67,7 +67,7 @@
           Color: <?php echo $datos['color']; ?>
           <hr class='linea'>
           <br>
-          <div style='margin-top: 30%; margin-left: 25%; '>
+          <div style='margin-top: 20%; margin-left: 20%;'>
             <button class='btnSumar btn btn-primary' onclick='comprar()'>Agregar al Carrito</button>
           </div>
         </div>
@@ -83,7 +83,6 @@
     ?>
     <footer class="pie"> 
   <footer>
-        <a href="#navbarNavDropdown"><p class="Volver">Volver arriba</P></a>
         <hr>
         <div class="foot" id="redes">
             <a href="https://ar.pinterest.com/"><div id="pinterest" class="logo"></div></a>
