@@ -2,10 +2,11 @@
   include 'conexion.php';
   session_start();
   if(!isset($_SESSION['usuario'])){
-  header('Location: sesion.php');
-  exit;
+    header('Location: sesion.php');
+    exit;
   }
   $usuario = $_SESSION['usuario'];
+  $resultado = $conexion->query("SELECT * FROM carrusel");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +55,7 @@
             <?php
               if(isset($_SESSION['usuario'])){
                 if($_SESSION['admin'] == 1){
-                  echo "<a class='nav-link' href='panel.php'>Panel de administración</a>";
+                  echo "<a class='nav-link' href='agregar.php'>Panel de administración</a>";
                 }
               }
             ?>
@@ -90,7 +91,7 @@
   <?php
     if(isset($_SESSION['usuario'])){
       if($_SESSION['admin'] == 1){
-        echo "<form action='carrousel.php'> <button type='submit' class='btn position-absolute top-0 end-0 m-3'style='z-index: 10; background: rgba(255,255,255,0.7);'>
+        echo "<form action='carrusel.php'> <button type='submit' class='btn position-absolute top-0 end-0 m-3'style='z-index: 10; background: rgba(255,255,255,0.7);'>
           <img src='im/editar.png' width='40' height='40'>
         </button></form>";
       }
@@ -100,20 +101,22 @@
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
   </div>
+  <?php while($row = $resultado->fetch_assoc()):?>
+    <?php if($row['imagen']){?>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="im/<?php echo $row['imagen']?>" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
 
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="im/hhh.webp" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-item">
+          <img src="im/<?php echo $row['imagen']?>" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block"></div>
+        </div>
       </div>
-    </div>
-
-    <div class="carousel-item">
-      <img src="im/tt.webp" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block"></div>
-    </div>
-  </div>
-
+    <?php } ?>
+  <?php endwhile;?>
   <button class="carousel-control-prev" style="width: 2%" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>

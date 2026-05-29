@@ -6,6 +6,26 @@
         $talle = $_POST['talle'];
         $categoria = $_POST['categoria'];
         $img = null;
+
+        if(isset($_FILES['img']) && $_FILES['img']['error'] == 0) {
+            $carpeta = "im/";
+            if(!is_dir($carpeta)) {
+                mkdir($carpeta,0777,true);
+            }
+            $img = time() . "_" . $_FILES['img']['name'];
+            $imgf = $carpeta . $img;
+            move_uploaded_file($_FILES['img']['tmp_name'], $imgf);
+        }
+
+        $sql_insert = "INSERT INTO productos (nombre, precio, id_talle, imagen, id_categoria) VALUES ('$nombre', '$precio', '$talle', '$categoria', '$img')";
+        if ($db->query($sql_insert) === TRUE) {
+            header('Location: agregar.php');
+            exit;
+        } 
+        else {
+            echo "Error al agregar el producto." . $db->error;
+        }
+        $db->close();
     }
 ?>
 <!DOCTYPE html>
@@ -20,7 +40,7 @@
 <body>
     <div style="width: 100%; height:25%;">
         <h3 class="font-monospace">Agregar producto</h3>
-        <form action="panel.php" method="POST" style="width: 100%;">
+        <form action="agregar.php" method="POST" style="width: 100%;">
             <input type="text" name="nombre" class="mb-2" style="height: 38px;" placeholder="Ingresa el nombre">
             <input type="text" name="precio" class="mb-2" style="height: 38px;" placeholder="Ingresa el precio">
             <label for="talle" class="mb-2">Seleccionar talle</label>
