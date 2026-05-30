@@ -3,9 +3,16 @@
     $resultado = $conexion -> query("SELECT * FROM carrusel");
     if($_SERVER["REQUEST_METHOD"] === "POST" ){
         $newid = $_POST['id'];
-        $edit = $_POST['editar'];
-        print_r($edit);
-        $sql_update = "UPDATE carrusel SET imagen ='[$edit]' WHERE id = '". $newid ."'";
+        if(isset($_FILES['editar']) && $_FILES['editar']['error'] == 0){ //Pregunta si existe un archivo a través de post y se subió correctamente.
+            $imagen = addslashes(file_get_contents($_FILES['editar']['tmp_name'])); //Toma la imágen temporal y la guarda en una varibale.
+            $sql_update = "UPDATE carrusel SET imagen = '$imagen' WHERE id = '$newid'";
+            if ($conexion->query($sql_update) === TRUE) {
+                header('Location: index.php');
+                exit;
+            } else {
+                echo "Error al editar el carrusel: " . $conexion->error;
+            }
+    }
         if ($conexion->query($sql_update) === TRUE) {
             header('Location: index.php'); 
             exit;
@@ -31,17 +38,17 @@
         <?php while($row = $resultado->fetch_assoc()):?>
             <div >
                 <?php if($row['imagen']){?>
-                    <img style='width: 30%; height: 20%;' src='im/<?php echo $row['imagen']?>' alt='imagen'>
-                    <form action='' method='POST' style='width: 30%;'>
-                        <input hidden type='number' name='id' value='<?php echo $row['id'] ?>'>
+                    <img style='width: 30%; height: 20%;' src='data:image/webp;base64,<?php echo base64_encode($row['imagen'])?>' alt='imagen'>
+                    <form action='' method='POST' style='width: 30%;' enctype="multipart/form-data">
+                        <input hidden type='number' name='id' value='<?php echo ($row['id'])?>'>
                         <label for="editar">Insertar nueva imágen</label> <br>
-                        <input type="file" accept="im/*" name="editar" required class="mb-2" style="height: 38px;"> <br>
+                        <input type="file" accept="image/*" name="editar" required class="mb-2" style="height: 38px;"> <br>
                         <button type='submit' class="btn btn-outline-dark">Enviar</button>
-                        <form action='borrar.php' method='POST' style='width: 30%;'>
-                            <input hidden type='number' name='id' value='<?php echo $row['id'] ?>'>
-                            <button type='submit' class="btn btn-outline-dark">Borrar</button>
-                        </form>
-                    </form> <br>
+                    </form>
+                    <form action='borrar.php' method='POST' style='width: 30%;'>
+                        <input hidden type='number' name='id' value='<?php echo ($row['id'])?>'>
+                        <button type='submit' class="btn btn-outline-dark">Borrar</button>
+                    </form>
                 <?php } ?>
             </div>
         <?php endwhile; ?>

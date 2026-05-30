@@ -33,7 +33,7 @@
             <a class="nav-link active" href="index.php">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Nosotros</a>
+            <a class="nav-link" href="nosotros.php">Nosotros</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="ofertas.php">Ofertas</a>
@@ -97,35 +97,32 @@
       }
     }
   ?>
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-  </div>
-  <?php while($row = $resultado->fetch_assoc()):?>
-    <?php if($row['imagen']){?>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="im/<?php echo $row['imagen']?>" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img src="im/<?php echo $row['imagen']?>" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block"></div>
-        </div>
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+      <?php 
+        $active = true;
+        while($row = $resultado->fetch_assoc()):
+        if($row['imagen']){
+      ?>
+      <div class="carousel-item <?php if($active){ echo 'active'; $active = false; }?>">
+        <img src="data:image/webp;base64,<?php echo base64_encode($row['imagen']) ?>" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block"></div>
       </div>
-    <?php } ?>
-  <?php endwhile;?>
-  <button class="carousel-control-prev" style="width: 2%" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-
-  <button class="carousel-control-next" style="width: 2%" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+      <?php } ?>
+      <?php endwhile;?>
+      <button class="carousel-control-prev" style="width: 2%" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" style="width: 2%" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
   <footer> 
   <div class="foot" id="redes">

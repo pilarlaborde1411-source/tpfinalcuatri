@@ -45,12 +45,12 @@
             <input type="text" name="precio" class="mb-2" style="height: 38px;" placeholder="Ingresa el precio">
             <label for="talle" class="mb-2">Seleccionar talle</label>
             <select name="talle" class="mb-2" style="height: 38px;">
-            <?php 
-                $sql_select = "SELECT * FROM talle";
-                $resultado = mysqli_query($conexion, $sql_select);
-                while ($row = $resultado->fetch_assoc()): ?>
-                   <option value="<?$row['id']?>"><?$row['talle']?></option>
-                <?php endwhile; ?>
+                <?php 
+                    $sql_select = "SELECT * FROM talle";
+                    $resultado = mysqli_query($conexion, $sql_select);
+                    while ($row = $resultado->fetch_assoc()): ?>
+                    <option value="<?$row['id']?>"><?$row['talle']?></option>
+                    <?php endwhile; ?>
             </select>
             <label for="categoria" class="mb-2">Seleccionar categoría</label>
             <select name="categoria" class="mb-2" style="height: 38px;"> 
