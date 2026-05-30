@@ -49,7 +49,7 @@
                     $sql_select = "SELECT * FROM talle";
                     $resultado = mysqli_query($conexion, $sql_select);
                     while ($row = $resultado->fetch_assoc()): ?>
-                    <option value="<?$row['id']?>"><?$row['talle']?></option>
+                        <option value="<?= $row['id']?>"><?= $row['talle']?></option>
                     <?php endwhile; ?>
             </select>
             <label for="categoria" class="mb-2">Seleccionar categoría</label>
@@ -58,7 +58,7 @@
                     $sql_select = "SELECT * FROM categoria";
                     $resultado = mysqli_query($conexion, $sql_select);
                     while ($row = $resultado->fetch_assoc()): ?>
-                        <option value="<?$row['id']?>"><?$row['nombre']?></option>
+                        <option value="<?= $row['id']?>"><?= $row['nombre']?></option>
                     <?php endwhile; ?>
             </select>
             <label for="img" class="mb-2">Insertar imágen</label>
