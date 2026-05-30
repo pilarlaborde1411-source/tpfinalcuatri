@@ -46,7 +46,7 @@
                         <button type='submit' class="btn btn-outline-dark">Enviar</button>
                     </form>
                     <form action='borrar.php' method='POST' style='width: 30%;'>
-                        <input hidden type='number' name='id' value='<?php echo ($row['id'])?>'>
+                        <input hidden type='number' name='borrar' value='<?php echo ($row['id'])?>'>
                         <button type='submit' class="btn btn-outline-dark">Borrar</button>
                     </form>
                 <?php } ?>
