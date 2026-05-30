@@ -12,15 +12,8 @@
             } else {
                 echo "Error al editar el carrusel: " . $conexion->error;
             }
-    }
-        if ($conexion->query($sql_update) === TRUE) {
-            header('Location: index.php'); 
-            exit;
-        } 
-        else {
-            echo "Error al editar el carrusel." . $conexion->error;
-        }
-        $conexion->close();
+            $conexion->close();
+        }   
     }
 ?>
 <!DOCTYPE html>
