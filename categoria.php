@@ -19,15 +19,15 @@ if(mysqli_num_rows($resultado)>0){
         </head>
         <body>
            <h1>".$productos['categoria']."</h1>
-            <div class='col-md-4 mb-4'> <a href='detalle.php?id_producto=".$productos['id']."' style='text-decoration: none; color: black;'>
+            
             <div class='card' style='width: 25rem;'>
                 <img src='".$productos['imagen']."' class='card-img-top' alt=''>
                 <div class='card-body'>
+                <div class='col-md-4 mb-4'> <a href='detalle.php?id_producto=".$productos['id']."' style='text-decoration: none; color: black;'>
                 <h5 class='card-title'>".$productos['nombre']."</h5>
-                <p class='card-text'>Jean Ancho Azul</p>
+                <br>
                 <h3> $ ".$productos['precio']."</h3>
-                <button style= 'margin-left: 30% ; width: 100px; font-family: Simple Dreams; border-radius: 15px;' class='btnSumar btn btn-primary' onclick='comprar()'>Comprar</button>
-                </div>
+                <button style= 'margin-left: 85% ; width: 150px; font-family: Simple Dreams; border-radius: 15px;' class='btnSumar btn btn-primary' onclick='comprar()'>Agregar al Carrito</button>
             </div>
             </div>
         </body>

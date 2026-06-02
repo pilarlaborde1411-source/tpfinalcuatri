@@ -1,0 +1,9 @@
+<?php
+include 'conexion.php';
+
+$id = $_GET['id';]; //recibe id del carrito
+$sql = "DELETE FROM carrito WHERE id = '$id'";
+
+$conexion->query($sql);
+header("Location: index.php");
+?>
