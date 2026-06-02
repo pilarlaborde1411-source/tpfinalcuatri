@@ -6,7 +6,7 @@
     exit;
   }
   $usuario = $_SESSION['usuario'];
-  $resultado = $conexion->query("SELECT * FROM carrusel");
+  $resultadoCarrusel = $conexion->query("SELECT * FROM carrusel");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,6 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
-
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><h1>BUBBA STORE</h1></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,10 +38,7 @@
             <a class="nav-link" href="ofertas.php">Ofertas</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-              data-bs-toggle="dropdown">
-              Colecciones
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Colecciones</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="remeras.php">Remeras</a></li>
               <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
@@ -84,13 +80,13 @@
             $idUsuario = $_SESSION['id_usuario'];
             $sql = "SELECT carrito.id AS id_carrito, producto.* FROM carrito INNER JOIN producto ON carrito. `id-producto` = producto.id WHERE carrito.`id-usuario` = '$idUsuario'";
             //busca los registros del carrito, los une con producto y obtiene la info del producto
-            $resultado = $conexion->query($sql);
+            $resultadoCarrito = $conexion->query($sql);
             ?>
             <li class="dropdown-header text-center fs-5">Carrito de Compras</li>
               <li><hr class="dropdown-divider"></li>
               <?php
-              if ($resultado->num_rows > 0) {
-              while($datos = $resultado->fetch_assoc()) { //recorre los productos encontrados
+              if ($resultadoCarrito->num_rows > 0) {
+              while($datos = $resultadoCarrito->fetch_assoc()) { //recorre los productos encontrados
               ?>
               <li class="px-3 py-2">
                 <div class="row align-items-center">
@@ -134,8 +130,8 @@
         </ul>
       </div>
     </div>
-  </nav>
-  <div id="carouselExampleCaptions" class="carousel slide position-relative">
+</nav>
+<div id="carouselExampleCaptions" class="carousel slide position-relative">
   <?php
     if(isset($_SESSION['usuario'])){
       if($_SESSION['admin'] == 1){
@@ -153,7 +149,7 @@
     <div class="carousel-inner">
       <?php 
         $active = true;
-        while($row = $resultado->fetch_assoc()):
+        while($row = $resultadoCarrusel->fetch_assoc()):
         if($row['imagen']){
       ?>
       <div class="carousel-item <?php if($active){ echo 'active'; $active = false; }?>">
@@ -172,35 +168,35 @@
       </button>
     </div>
   </div>
-
+</div>
+  <!-- CARD --> 
   <?php
-  $sql = "SELECT * FROM producto";
-  $resultado = mysqli_query($conexion, $sql);
-  while ($datos = mysqli_fetch_assoc($resultado)) {
-    echo "<div class='col-md-4 mb-4'>
-        <div class='card' style='width: 25rem;'>
-          <img src='im/".$datos['imagen']."' class='card-img-top' alt=''>
-          <div class='card-body'>
-             <h5 class='card-title'>".$datos['nombre']."</h5>
-              <p class='card-text'>".$datos['precio']."</p>
-              <h3></h3>
-              <a href='agregarCarrito.php?id=".$datos['id']."' 
-              class='btn btn-primary'>Comprar</a>
+    $sql = "SELECT * FROM producto";
+    $resultado = mysqli_query($conexion, $sql);
+    while ($datos = mysqli_fetch_assoc($resultado)) {
+      echo "<div class='col-md-4 mb-4'>
+          <div class='card' style='width: 25rem;'>
+            <img src='im/".$datos['imagen']."' class='card-img-top' alt=''>
+            <div class='card-body'>
+              <h5 class='card-title'>".$datos['nombre']."</h5>
+                <p class='card-text'>".$datos['precio']."</p>
+                <h3></h3>
+                <a href='agregarCarrito.php?id=".$datos['id']."' 
+                class='btn btn-primary'>Comprar</a>
+              </div>
             </div>
-          </div>
-        </div>";
+          </div>";
     }
   ?>
   <footer>
-  <div class="foot" id="redes">
-    <a href=""><img src="im/white-pinterest-logo-png--30.png" alt="" class="logo"></a>
-    <a href=""><img src="im/twitter.png" alt="" class="logo"></a>
-    <a href=""><img src="im/Instagram_logo.png" alt="" class="logo"></a>
-    <a href=""><img src="im/youtube-play.png" alt="" class="logo"></a>
-    <a href=""><img src="im/facebook-new.png" alt="" class="logo"></a>
-  </div>
+    <div class="foot" id="redes">
+      <a href=""><img src="im/white-pinterest-logo-png--30.png" alt="" class="logo"></a>
+      <a href=""><img src="im/twitter.png" alt="" class="logo"></a>
+      <a href=""><img src="im/Instagram_logo.png" alt="" class="logo"></a>
+      <a href=""><img src="im/youtube-play.png" alt="" class="logo"></a>
+      <a href=""><img src="im/facebook-new.png" alt="" class="logo"></a>
+    </div>
   </footer>
-  </div>
 </body>
 </html>
 <?php 
