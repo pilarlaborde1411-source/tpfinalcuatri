@@ -114,7 +114,8 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                       </select>
-                      <a href="eliminarCarrito.php?id=<?php echo $datos['id_carrito']; ?>" 
+                      
+                      <a href="borrar.php?id=<?php echo $datos['id_carrito']; ?>" 
                       class="btn btn-outline-danger btn-sm">🗑️</a> <!-- envia id del producto al archivo -->
                     </div>
                   </div>
@@ -124,7 +125,7 @@
               <?php
               }
               } else {
-                  echo "<li class='text-center py-3' text-muted>El carrito está vacío </li>";
+                echo "<li class='text-center py-3' text-muted>El carrito está vacío </li>";
               }
               ?>
             </ul>
