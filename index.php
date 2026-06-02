@@ -169,25 +169,6 @@
     </div>
   </div>
 </div>
-  <!-- CARD --> 
-  <?php
-    $sql = "SELECT * FROM producto";
-    $resultado = mysqli_query($conexion, $sql);
-    while ($datos = mysqli_fetch_assoc($resultado)) {
-      echo "<div class='col-md-4 mb-4'>
-          <div class='card' style='width: 25rem;'>
-            <img src='im/".$datos['imagen']."' class='card-img-top' alt=''>
-            <div class='card-body'>
-              <h5 class='card-title'>".$datos['nombre']."</h5>
-                <p class='card-text'>".$datos['precio']."</p>
-                <h3></h3>
-                <a href='agregarCarrito.php?id=".$datos['id']."' 
-                class='btn btn-primary'>Comprar</a>
-              </div>
-            </div>
-          </div>";
-    }
-  ?>
   <footer>
     <div class="foot" id="redes">
       <a href=""><img src="im/white-pinterest-logo-png--30.png" alt="" class="logo"></a>
