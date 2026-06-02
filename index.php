@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<?php require_once 'navegacion.php'?>
+<?php include 'navegacion.php'?>
 <div id="carouselExampleCaptions" class="carousel slide position-relative">
   <?php
     if(isset($_SESSION['usuario'])){
