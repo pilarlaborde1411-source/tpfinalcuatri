@@ -26,7 +26,7 @@ if(mysqli_num_rows($resultado)>0){
                 <h5 class='card-title'>".$productos['nombre']."</h5>
                 <p class='card-text'>Jean Ancho Azul</p>
                 <h3> $ ".$productos['precio']."</h3>
-                <button style= 'margin-left: 30% ; width: 100px; font-family: Simple Dreams; border-radius: 15px;' class='btnSumar btn btn-primary' onclick='comprar()'>Comprar</button>
+                <button style= 'margin-left: 30% ; width: 150px; font-family: Simple Dreams; border-radius: 15px;' class='btnSumar btn btn-primary' onclick='comprar()'>Agregar al Carrito</button>
                 </div>
             </div>
             </div>
