@@ -38,6 +38,7 @@
                         <input type="file" accept="image/*" name="editar" required class="mb-2" style="height: 38px;"> <br>
                         <button type='submit' class="btn btn-outline-dark">Enviar</button>
                     </form>
+                    <form action=''></form>
                     <form action='borrar.php' method='POST' style='width: 30%;'>
                         <input hidden type='number' name='borrar' value='<?php echo ($row['id'])?>'>
                         <button type='submit' class="btn btn-outline-dark">Borrar</button>
