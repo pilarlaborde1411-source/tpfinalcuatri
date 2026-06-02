@@ -31,7 +31,7 @@
             Colecciones
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="top.php">Tops y Remeras</a></li>
+            <li><a class="dropdown-item" href="remera.php">Tops y Remeras</a></li>
             <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
             <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
             <li><a class="dropdown-item" href="camperas.php">Camperas</a></li>
@@ -103,9 +103,9 @@
       <div class="card" style="width: 25rem;">
         <img src="im/oferta5.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <h3>$12.000</h3>
+          <h5 class="card-title">Suertes Rosa</h5>
+          <p class="card-text">Suerter corto abierto</p>
+          <h3>$10.500</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>
@@ -116,9 +116,9 @@
       <div class="card" style="width: 25rem;">
         <img src="im/oferta6.jpg" class="card-img-top" alt="">
         <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <h3>$35.000</h3>
+          <h5 class="card-title">Campera Básica</h5>
+          <p class="card-text">Campera de algodon beige</p>
+          <h3>$15.000</h3>
           <button class="btnSumar btn btn-primary" onclick="comprar()">Comprar</button>
         </div>
       </div>

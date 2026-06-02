@@ -1,18 +1,3 @@
-.card
-{
-    width: 1000px;
-    height: 800px;
-    margin-top: 50px;
-    background-color: #ffffff;
-    display: inline-block;
-    border-style: double;
-    border-color: rgb(0, 0, 0);
-    margin-left: 5px;
-    margin-bottom: 40px;
-    padding-bottom: 20px;  
-    margin-right: 10px;
-    
-}
 #carrito
 {
     height: 3%;
@@ -41,6 +26,7 @@ h1
 {
     text-align: center;
 }
+
 .btnSumar
 {
     margin-left: 15px;
