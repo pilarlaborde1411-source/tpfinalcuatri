@@ -15,6 +15,7 @@
             if(password_verify($contrasena, $datos['contra'])){   
                 $_SESSION['usuario'] = $datos['nombre'];
                 $_SESSION['admin'] = $datos['admin'];
+                $_SESSION['id_usuario'] = $datos['id'];
                 header('location: index.php');
                 exit;
             }else{

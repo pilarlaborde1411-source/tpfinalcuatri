@@ -79,10 +79,57 @@
             <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
               <img src="im/carrito.png" alt="carrito" width="40" height="40"></img>
             </a>
-            <div class>
+            <ul class="dropdown-menu dropdown-menu-end cart-menu" style="width: 500px; eight:500px; padding: 15px;border-radius: 15px;"> 
+            <?php 
+            $idUsuario = $_SESSION['id_usuario'];
+            $sql = "SELECT carrito.id AS id_carrito, producto.* FROM carrito INNER JOIN producto ON carrito. `id-producto` = producto.id WHERE carrito.`id-usuario` = '$idUsuario'";
+            //busca los registros del carrito, los une con producto y obtiene la info del producto
+            $resultado = $conexion->query($sql);
+            ?>
+            <li class="dropdown-header text-center fs-5">Carrito de Compras</li>
+              <li><hr class="dropdown-divider"></li>
+              <?php
+              if ($resultado->num_rows > 0) {
+              while($datos = $resultado->fetch_assoc()) { //recorre los productos encontrados
+              ?>
+              <li class="px-3 py-2">
+                <div class="row align-items-center">
+                  <div class="col-5">
+                    <img src="im/<?php echo $datos['imagen']; ?>"
+                    class="img-fluid rounded" style="max-height: 140px; object-fit: cover;">
+                  </div>
 
-            </div>
+                  <div class="col-7">
+                    <p style="font-size: 1.1rem; font-weight: bold; margin-bottom: 5px;">
+                    <?php echo $datos['nombre'] ?></p>
+
+                    <p style="color: gray; margin-bottom: 10px;"> 
+                    <?php echo $datos['precio']; ?></p>
+                  
+                    <div style= "display:flex; align-items:center; gap:10px;">
+                      <select style="width:70px; padding:5px; border-radius:8px; border:1px solid #ccc;">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                      <a href="eliminarCarrito.php?id=<?php echo $datos['id_carrito']; ?>" 
+                      class="btn btn-outline-danger btn-sm">🗑️</a> <!-- envia id del producto al archivo -->
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <?php
+              }
+              } else {
+                  echo "<li class='text-center py-3' text-muted>El carrito está vacío </li>";
+              }
+              ?>
+            </ul>
           </li>
+          
         </ul>
       </div>
     </div>
@@ -124,7 +171,26 @@
       </button>
     </div>
   </div>
-  <footer> 
+
+  <?php
+  $sql = "SELECT * FROM producto";
+  $resultado = mysqli_query($conexion, $sql);
+  while ($datos = mysqli_fetch_assoc($resultado)) {
+    echo "<div class='col-md-4 mb-4'>
+        <div class='card' style='width: 25rem;'>
+          <img src='im/".$datos['imagen']."' class='card-img-top' alt=''>
+          <div class='card-body'>
+             <h5 class='card-title'>".$datos['nombre']."</h5>
+              <p class='card-text'>".$datos['precio']."</p>
+              <h3></h3>
+              <a href='agregarCarrito.php?id=".$datos['id']."' 
+              class='btn btn-primary'>Comprar</a>
+            </div>
+          </div>
+        </div>";
+    }
+  ?>
+  <footer>
   <div class="foot" id="redes">
     <a href=""><img src="im/white-pinterest-logo-png--30.png" alt="" class="logo"></a>
     <a href=""><img src="im/twitter.png" alt="" class="logo"></a>
