@@ -33,7 +33,7 @@
                     <?php
                         if(isset($_SESSION['usuario'])){
                             if($_SESSION['admin'] == 1){
-                                echo "<a class='nav-link' href='agregar.php'>Panel de administración</a>";
+                                echo "<a class='nav-link' href='admin.php'>Panel de administración</a>";
                             }
                         }
                     ?>
