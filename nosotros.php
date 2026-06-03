@@ -45,7 +45,7 @@
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin: 5% 10%;">
     <div>
         <h2 style="margin-top: 5%;">+54 001 234567</h2>
-        <h2 style="margin-top: 17%;">bubba.store@gmail.com</h2>
+        <h2 style="margin-top: 15%;">bubba.store@gmail.com</h2>
         <h2 style="margin-top: 22%;">Te esperamos💖</h2>
     </div>
     <iframe
