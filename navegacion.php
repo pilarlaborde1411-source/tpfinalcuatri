@@ -1,12 +1,5 @@
 <?php
     include 'conexion.php';
-    session_start();
-
-    if(!isset($_SESSION['usuario'])){
-        header('Location: sesion.php');
-        exit;
-    }
-    $usuario = $_SESSION['usuario'];
 ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -103,9 +96,10 @@
                                             <option value="4">4</option>
                                             <option value="5">5</option>
                                         </select>
-                                            
-                                        <a href="borrar.php?id=<?php echo $datos['id_carrito']; ?>" 
-                                        class="btn btn-outline-danger btn-sm">🗑️</a> <!-- envia id del producto al archivo -->
+                                        
+                                        <a class="nav-link" name="borrarCarrito" href="borrar.php?idCarrito=<?php echo $datos['id_carrito'];?>">
+                                            <img src="im/eliminar.png" alt="carrito" width="10" height="10"></img>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

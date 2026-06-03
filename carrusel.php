@@ -41,7 +41,7 @@
                     <form action=''></form>
                     <form action='borrar.php' method='POST' style='width: 30%;'>
                         <input hidden type='number' name='borrar' value='<?php echo ($row['id'])?>'>
-                        <button type='submit' class="btn btn-outline-dark">Borrar</button>
+                        <button type='submit' name="borrarCarrusel" class="btn btn-outline-dark">Borrar</button>
                     </form>
                 <?php } ?>
             </div>

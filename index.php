@@ -59,17 +59,7 @@
     </div>
   </div>
 </div>
-  <footer>
-    <div class="foot" id="redes">
-      <a href=""><img src="im/white-pinterest-logo-png--30.png" alt="" class="logo"></a>
-      <a href=""><img src="im/twitter.png" alt="" class="logo"></a>
-      <a href=""><img src="im/Instagram_logo.png" alt="" class="logo"></a>
-      <a href=""><img src="im/youtube-play.png" alt="" class="logo"></a>
-      <a href=""><img src="im/facebook-new.png" alt="" class="logo"></a>
-    </div>
-  </footer>
+<?php include 'footer.php'?>
 </body>
 </html>
-<?php 
-  $conexion->close();
-?>
+<?php $conexion->close(); ?>
