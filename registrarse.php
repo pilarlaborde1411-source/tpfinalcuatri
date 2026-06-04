@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="container">
-        <div class="usuario usuario mb-2"><img src="im/iconos/usuariosesion.png" alt=""></div>
+        <div class="usuario usuario mb-2"></div>
         <form method="POST" action="registrarse.php" class="form" style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: auto;">
             <input class="mb-2" style="width: 100%; height: 38px;" type="text" name="nombre" placeholder="Usuario" required>
             <input class="mb-2" style="width: 100%; height: 38px;" type="email" name="email" placeholder="Email" required>
