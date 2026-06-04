@@ -22,15 +22,6 @@
 <body>
 <?php include 'navegacion.php'?>
 <div id="carouselExampleCaptions" class="carousel slide position-relative">
-  <?php
-    if(isset($_SESSION['usuario'])){
-      if($_SESSION['admin'] == 1){
-        echo "<form action='carrusel.php'> <button type='submit' class='btn position-absolute top-0 end-0 m-3'style='z-index: 10; background: rgba(255,255,255,0.7);'>
-          <img src='im/editar.png' width='40' height='40'>
-        </button></form>";
-      }
-    }
-  ?>
   <div id="carouselExampleIndicators" class="carousel slide">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
