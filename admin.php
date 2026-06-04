@@ -16,6 +16,33 @@
             }   
             $conexion->close();
         }
+        if(isset($_POST['agregarProducto'])) {
+            $nombre = $_POST['nombre'];
+            $precio = $_POST['precio'];
+            $talle = $_POST['talle'];
+            $categoria = $_POST['categoria'];
+            $img = null;
+
+            if(isset($_FILES['agregar']) && $_FILES['agregar']['error'] == 0) {
+                $carpeta = "im/c";
+                if(!is_dir($carpeta)) {
+                    mkdir($carpeta,0777,true);
+                }
+                $img = time() . "_" . $_FILES['img']['name'];
+                $imgf = $carpeta . $img;
+                move_uploaded_file($_FILES['img']['tmp_name'], $imgf);
+            }
+
+            $sql_insert = "INSERT INTO productos (nombre, precio, id_talle, imagen, id_categoria) VALUES ('$nombre', '$precio', '$talle', '$categoria', '$img')";
+            if ($db->query($sql_insert) === TRUE) {
+                header('Location: agregar.php');
+                exit;
+            } 
+            else {
+                echo "Error al agregar el producto." . $db->error;
+            }
+            $db->close();
+            }
     }
 ?>
 <!DOCTYPE html>
@@ -59,11 +86,11 @@
                 <div>
                     <?php if($row['imagen']){?>
                         <img style='width: 30%; height: 20%;' src='data:image/webp;base64,<?php echo base64_encode($row['imagen'])?>' alt='imagen'>
-                        <form action='editarImagen' method='POST' style='width: 30%;' enctype="multipart/form-data">
+                        <form action='' method='POST' style='width: 30%;' enctype="multipart/form-data">
                             <input hidden type='number' name='id' class='form-control mb-2' value='<?php echo ($row['id'])?>'>
                             <label for="editar">Insertar nueva imágen</label> <br>
                             <input type="file" accept="image/*" name="editar" required class="form-control mb-2" style="height: 38px;"> <br>
-                            <button type='submit' class="btn btn-outline-dark">Enviar</button>
+                            <button type='submit' name="editarImagen" class="btn btn-outline-dark">Enviar</button>
                         </form>
                     <?php } ?>
                 </div>
@@ -73,7 +100,7 @@
             <div id="productos" class="formulario card p-4 mt-3">
                 <div style="width: 100%; height:25%;">
                     <h3 class="font-monospace">Agregar producto</h3>
-                    <form action="agregar.php" method="POST" style="width: 100%;">
+                    <form action="" method="POST" style="width: 100%;">
                         <input type="text" name="nombre" class="form-control mb-2 mb-2" style="height: 38px;" placeholder="Ingresa el nombre">
                         <input type="text" name="precio" class="form-control mb-2 mb-2" style="height: 38px;" placeholder="Ingresa el precio">
                         <label for="talle" class="mb-2">Seleccionar talle</label>
@@ -94,14 +121,13 @@
                                     <option value="<?= $row['id']?>"><?= $row['nombre']?></option>
                                 <?php endwhile; ?>
                         </select>
-                        <label for="img" class="mb-2">Insertar imágen</label>
-                        <input type="file" accept="im/*" name="img" class="form-control mb-2 mb-2" style="height: 38px;"> <br>
-                        <button type="submit" class="btn btn-outline-dark">Enviar</button>
+                        <label for="agregar" class="mb-2">Insertar imágen</label>
+                        <input type="file" accept="image/*" name="agregar" class="form-control mb-2 mb-2" style="height: 38px;"> <br>
+                        <button type="submit" name="agregarProducto" class="btn btn-outline-dark">Enviar</button>
                     </form>
                 </div>
             </div>
-
-            <!-- Usuarios -->
+            <!-- Editar prodcutos -->
             <div id="usuarios" class="formulario card p-4 mt-3">
                 <h3>Administrar Usuarios</h3>
 
