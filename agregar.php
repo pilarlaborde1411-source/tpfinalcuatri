@@ -38,34 +38,7 @@
     <title>Agregar producto</title>
 </head>
 <body>
-    <div style="width: 100%; height:25%;">
-        <h3 class="font-monospace">Agregar producto</h3>
-        <form action="agregar.php" method="POST" style="width: 100%;">
-            <input type="text" name="nombre" class="mb-2" style="height: 38px;" placeholder="Ingresa el nombre">
-            <input type="text" name="precio" class="mb-2" style="height: 38px;" placeholder="Ingresa el precio">
-            <label for="talle" class="mb-2">Seleccionar talle</label>
-            <select name="talle" class="mb-2" style="height: 38px;">
-                <?php 
-                    $sql_select = "SELECT * FROM talle";
-                    $resultado = mysqli_query($conexion, $sql_select);
-                    while ($row = $resultado->fetch_assoc()): ?>
-                        <option value="<?= $row['id']?>"><?= $row['talle']?></option>
-                    <?php endwhile; ?>
-            </select>
-            <label for="categoria" class="mb-2">Seleccionar categoría</label>
-            <select name="categoria" class="mb-2" style="height: 38px;"> 
-                <?php 
-                    $sql_select = "SELECT * FROM categoria";
-                    $resultado = mysqli_query($conexion, $sql_select);
-                    while ($row = $resultado->fetch_assoc()): ?>
-                        <option value="<?= $row['id']?>"><?= $row['nombre']?></option>
-                    <?php endwhile; ?>
-            </select>
-            <label for="img" class="mb-2">Insertar imágen</label>
-            <input type="file" accept="im/*" name="img" class="mb-2" style="height: 38px;"> <br>
-            <button type="submit" class="btn btn-outline-dark">Enviar</button>
-        </form>
-    </div>
+    
 </body>
 </html>
 <?php 
