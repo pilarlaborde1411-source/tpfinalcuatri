@@ -49,11 +49,10 @@
     if (mysqli_num_rows ($resultado) > 0){
       while($datos = mysqli_fetch_assoc($resultado)){
         ?>
-        <div style='width: 550px; height: 550px; float:right; margin:5%; font-size: 25px; padding-top: 5%; font-family: Simple Dreams; '>
-          <h1 style='font-size: 50px;'><?php echo $datos['nombre']; ?></h1>
-          <br style='margin-bottom: 20px';>
-          $ <?php echo $datos['precio']; ?>
-          <br style='margin-bottom: 20px;'>
+        <div style='width: 550px; height: 550px; float:right; margin:5%; font-size: 25px; padding-top: 5%; font-family: Simple Dreams; margin-left: 10px;'>
+          <h1 style='font-size: 80px;'><?php echo $datos['nombre']; ?></h1> 
+          <p style='font-size: 30px;'>$ <?php echo $datos['precio']; ?></p>
+          <hr class='linea'>
           <select name='talle' class='mb-2' style='height: 38px;'>
             <?php
               $sql_select = "SELECT * FROM talle";
@@ -65,14 +64,14 @@
           </select>
           <br>
           Color: <?php echo $datos['color']; ?>
-          <hr class='linea'>
+          
           <br>
-          <div style='margin-top: 20%; margin-left: 20%;'>
-            <button class='btnSumar btn btn-primary' onclick='comprar()'>Agregar al Carrito</button>
+          <div style='margin-top: 20%; margin-left: 10%;'>
+            <button style='width: 150px; height: 50px;' class='btn btn-outline-dark' onclick='comprar()'>Agregar al Carrito</button>
           </div>
         </div>
-        <div>
-          <img style='width: 400px; height: 550px; margin-top: 5%; float:left; border: 2px solid #000; margin: 5%; margin-left: 15%;' src='<?php echo $datos['imagen']; ?>'>
+        <div style='display: flex; margin-top: 3%; justify-content: center; margin-right: 2px;'>
+          <img style='width: 450px; height: 580px; margin-top: 5%; float:left; border: 2px solid #000; margin: 5%; margin-left: 1px;' src='<?php echo $datos['imagen']; ?>'>
         </div>
         <a href='categoria.php?id_categoria=<?php echo $datos['id_categoria']; ?>'><button style='margin-left: 5%; margin-top: 2%;'>←</button></a>
         <?php

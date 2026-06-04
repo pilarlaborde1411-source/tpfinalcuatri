@@ -1,13 +1,13 @@
 .linea {
     border: 1px solid #000;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 .btnSumar
 {
     display: block;
     margin: 20px;
-    padding: 5px;
     text-decoration: none;
     color: #ffffff;
     border: 1px solid #323231;

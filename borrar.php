@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" ) {
         exit;
         $conexion->close();
     }
-    if(isset($_GET['idCarrito'])) {
+    if(isset($_GET['idCarrito'])) { 
         $idCarrito = $_GET['idCarrito'];
         $sql = ;
         $conexion->query("DELETE FROM carrito WHERE id = '$id'");
