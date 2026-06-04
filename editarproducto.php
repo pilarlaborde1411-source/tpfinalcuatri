@@ -50,6 +50,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             <label for="img" class="mb-2">Seleccionar imagen</label>
             <input type="file" name="img" class="mb-2" style="height: 38px;">
             <button type="submit" class="btn btn-primary">Guardar cambios</button>
-        </form>
-    </body>
+    </form>
+</body>
 </html>

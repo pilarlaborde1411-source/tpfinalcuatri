@@ -19,7 +19,6 @@
         if(isset($_POST['agregarProducto'])) {
             $nombre = $_POST['nombre'];
             $precio = $_POST['precio'];
-            $talle = $_POST['talle'];
             $categoria = $_POST['categoria'];
             $img = null;
 
@@ -33,7 +32,7 @@
                 move_uploaded_file($_FILES['img']['tmp_name'], $imgf);
             }
 
-            $sql_insert = "INSERT INTO productos (nombre, precio, id_talle, imagen, id_categoria) VALUES ('$nombre', '$precio', '$talle', '$categoria', '$img')";
+            $sql_insert = "INSERT INTO productos (nombre, precio, imagen, id_categoria) VALUES ('$nombre', '$precio', '$categoria', '$img')";
             if ($db->query($sql_insert) === TRUE) {
                 header('Location: agregar.php');
                 exit;
@@ -72,8 +71,8 @@
         <div class="col-md-3 col-lg-2 bg-dark text-white sideBar p-3">
             <div class="d-grid gap-2 mt-4">
                 <button class="btn btn-outline-dark" onclick="mostrar('carrusel')">Editar carrusel</button>
-                <button class="btn btn-outline-dark" onclick="mostrar('carrusel')">Agregar producto</button>
-                <button class="btn btn-outline-dark" onclick="mostrar('productos')">Editar productos</button>
+                <button class="btn btn-outline-dark" onclick="mostrar('agregarProducto')">Agregar producto</button>
+                <button class="btn btn-outline-dark" onclick="mostrar('verProductos')">Ver productos</button>
                 <button class="btn btn-outline-dark" onclick="mostrar('nosotros')">Editar nosotros</button>
             </div>
         </div>
@@ -97,21 +96,12 @@
                 <?php endwhile; ?>
             </div>
             <!-- Agregar productos -->
-            <div id="productos" class="formulario card p-4 mt-3">
+            <div id="agregarProductos" class="formulario card p-4 mt-3">
                 <div style="width: 100%; height:25%;">
                     <h3 class="font-monospace">Agregar producto</h3>
                     <form action="" method="POST" style="width: 100%;">
                         <input type="text" name="nombre" class="form-control mb-2 mb-2" style="height: 38px;" placeholder="Ingresa el nombre">
                         <input type="text" name="precio" class="form-control mb-2 mb-2" style="height: 38px;" placeholder="Ingresa el precio">
-                        <label for="talle" class="mb-2">Seleccionar talle</label>
-                        <select name="talle" class="mb-2" style="height: 38px;">
-                            <?php 
-                                $sql_select = "SELECT * FROM talle";
-                                $resultado = mysqli_query($conexion, $sql_select);
-                                while ($row = $resultado->fetch_assoc()): ?>
-                                    <option value="<?= $row['id']?>"><?= $row['talle']?></option>
-                                <?php endwhile; ?>
-                        </select>
                         <label for="categoria" class="mb-2">Seleccionar categoría</label>
                         <select name="categoria" class="mb-2" style="height: 38px;"> 
                             <?php 
@@ -127,19 +117,9 @@
                     </form>
                 </div>
             </div>
-            <!-- Editar prodcutos -->
-            <div id="usuarios" class="formulario card p-4 mt-3">
-                <h3>Administrar Usuarios</h3>
-
-                <form>
-                    <input type="text"
-                           class="form-control mb-3"
-                           placeholder="Usuario">
-
-                    <button class="btn btn-warning">
-                        Actualizar
-                    </button>
-                </form>
+            <!-- Ver prodcutos -->
+            <div id="verProductos" class="formulario card p-4 mt-3">
+                <?php 
             </div>
 
             <!-- Contacto -->
