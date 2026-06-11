@@ -17,7 +17,7 @@
                     <a class="nav-link" href="nosotros.php">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ofertas.php">Ofertas</a>
+                    <a class="nav-link" href="oferta.php">Ofertas</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Colecciones</a>
