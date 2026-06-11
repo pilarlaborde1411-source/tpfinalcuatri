@@ -22,11 +22,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Colecciones</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="remeras.php">Remeras</a></li>
-                        <li><a class="dropdown-item" href="pantalon.php">Pantalones</a></li>
-                        <li><a class="dropdown-item" href="zapatos.php">Zapatos</a></li>
-                        <li><a class="dropdown-item" href="camperas.php">Camperas</a></li>
-                        <li><a class="dropdown-item" href="joyas.php">Joyas</a></li>
+                        <li><a class="dropdown-item" href="categoria.php?id=2">Remeras</a></li>
+                        <li><a class="dropdown-item" href="categoria.php?id=1">Pantalones</a></li>
+                        <li><a class="dropdown-item" href="categoria.php?id=3">Zapatos</a></li>
+                        <li><a class="dropdown-item" href="categoria.php?id=4">Camperas</a></li>
+                        <li><a class="dropdown-item" href="categoria.php?id=5">Joyas</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -97,9 +97,11 @@
                                             <option value="5">5</option>
                                         </select>
                                         
-                                        <a class="nav-link" name="borrarCarrito" href="borrar.php?idCarrito=<?php echo $datos['id_carrito'];?>">
-                                            <img src="im/eliminar.png" alt="carrito" width="10" height="10"></img>
-                                        </a>
+                                        <form action="borrar.php">
+                                            <button class="nav-link" name="borrarCarrito" href="borrar.php?idCarrito=<?php echo $datos['id_carrito'];?>" type="submit">
+                                                <img src="im/eliminar.png" alt="carrito" width="10" height="10"></img>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

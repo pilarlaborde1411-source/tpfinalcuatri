@@ -73,7 +73,7 @@
         <div style='display: flex; margin-top: 3%; justify-content: center; margin-right: 2px;'>
           <img style='width: 450px; height: 580px; margin-top: 5%; float:left; border: 2px solid #000; margin: 5%; margin-left: 1px;' src='<?php echo $datos['imagen']; ?>'>
         </div>
-        <a href='categoria.php?id_categoria=<?php echo $datos['id_categoria']; ?>'><button style='margin-left: 5%; margin-top: 2%;'>←</button></a>
+        <a href='categoria.php?id=<?php echo $datos['id_categoria']; ?>'><button style='margin-left: 5%; margin-top: 2%;'>←</button></a>
         <?php
       }
     }

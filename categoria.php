@@ -1,6 +1,6 @@
 <?php
 include ('conexion.php');
-$categoria= $_GET['id_categoria'];
+$categoria= $_GET['id']; 
 $sql="SELECT 
     p.id, p.nombre, p.precio, p.id_talle, p.imagen, p.id_categoria, c.nombre AS categoria FROM producto p INNER JOIN talle t ON p.id_talle = t.id INNER JOIN categoria c ON p.id_categoria = c.id WHERE p.id_categoria = $categoria";
 $resultado = mysqli_query($conexion,$sql);
@@ -17,9 +17,9 @@ if(mysqli_num_rows($resultado)>0){
             <link rel='stylesheet' href='pantalon.css'>
             <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js' integrity='sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q' crossorigin='anonymous'></script>
         </head>
-        <body>
-         ".include 'navegacion.php'."
-           <h1>".$productos['categoria']."</h1>
+        <body>";
+         include ('navegacion.php');
+           echo "<h1 style='text-align: center;'>".$productos['categoria']."</h1>
             
             <div class='card' style='width: 25rem;'>
                 <img src='".$productos['imagen']."' class='card-img-top' alt=''>
