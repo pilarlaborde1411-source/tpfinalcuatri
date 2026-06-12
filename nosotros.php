@@ -1,3 +1,7 @@
+<?php
+    include 'conexion.php';
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,19 +15,19 @@
 <body>
 <?php include 'navegacion.php'?>
 
-<h1 style="margin: 2% auto 0; text-align: center;">Sobre Nosotros</h1>
+<h1 style="margin: 2% auto 0; text-align: center; font-family: bricolage grotesque;">Sobre Nosotros</h1>
 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin: 2% 10%;">
     <div>
-        <h2 style="margin-top:8%;">
-          <img src="im/iconos/whatsapp.png" alt="" style="width: 9%;">
-          +𝟱𝟰 𝟬𝟬𝟭 𝟮𝟯𝟰𝟱𝟲𝟳</h2>
+        <h2 style="margin-top:8%; font-family: bricolage grotesque;">
+          <img src="im/iconos/whatsap.png" alt="" style="width: 10%;">
+          +54 001 234567</h2>
 
-        <h2 style="margin-top: 10%;">
-          <img src="im/iconos/gmail.png" alt="" style="width: 9%;">
-          𝙗𝙪𝙗𝙗𝙖.𝙨𝙩𝙤𝙧𝙚@𝙜𝙢𝙖𝙞𝙡.𝙘𝙤𝙢</h2>
+        <h2 style="margin-top: 10%; font-family: bricolage grotesque;">
+          <img src="im/iconos/gmail.png" alt="" style="width: 10%;">
+          bubba.store@gmail.com</h2>
 
-        <h2 style="margin-top: 12%;">
-          𝙏𝙚 𝙚𝙨𝙥𝙚𝙧𝙖𝙢𝙤𝙨<img src="im/iconos/coraozn.png" alt="" style="width: 6%;"></h2>
+        <h2 style="margin-top: 12%; font-family: bricolage grotesque;">
+          Te espeamos<img src="im/iconos/coraozn.png" alt="" style="width: 6%;"></h2>
     </div>
     
     <div class="col-lg-7">

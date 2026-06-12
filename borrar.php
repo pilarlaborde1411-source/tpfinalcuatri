@@ -1,9 +1,9 @@
 <?php
 include 'conexion.php';
-if($_SERVER["REQUEST_METHOD"] === "POST" ) {
+if($_SERVER["REQUEST_METHOD"] === "POST" ) { //el carrito usa metofo get, no post (pq usa href)
     if(isset($_GET['idCarrito'])) {
         $idCarrito = $_GET['idCarrito'];
-        $conexion->query("DELETE FROM carrito WHERE id = '$id'");
+        $conexion->query("DELETE FROM carrito WHERE id = '$idCarrito'");
         if ($conexion->query($sql_update) === TRUE) {
             //algo
         } else {

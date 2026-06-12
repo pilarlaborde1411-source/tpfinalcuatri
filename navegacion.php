@@ -54,18 +54,25 @@
             <!-- Carrito -->
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-                        <img src="im/iconos/carrito.png" alt="carrito" width="40" height="40"></img>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end cart-menu" style="width: 500px; eight:500px; padding: 15px;border-radius: 15px;"> 
-                    
+                <a class="btn btn-light position-relative"
+                    href="#" role="button" data-bs-toggle="dropdown">
+                    <img src="im/iconos/carrito.png" alt="carrito" width="40" height="40">
+                </a>
+                    <!--id eequivale al txtHint -->
+                    <ul id="contenidoCarrito"
+                    class="dropdown-menu dropdown-menu-end cart-menu" 
+                    style="width: 500px; eight:500px; padding: 15px;border-radius: 15px;">
                         <?php 
                             $idUsuario = $_SESSION['id_usuario'];
-                            $sql = "SELECT carrito.id AS id_carrito, producto.* FROM carrito INNER JOIN producto ON carrito. `id-producto` = producto.id WHERE carrito.`id-usuario` = '$idUsuario'";
+                            $sql = "SELECT carrito.id AS id_carrito, producto.* FROM carrito INNER JOIN producto ON carrito.`id-producto` = producto.id WHERE carrito.`id-usuario` = '$idUsuario'";
                             //busca los registros del carrito, los une con producto y obtiene la info del producto
                             $resultadoCarrito = $conexion->query($sql);
+                            
+                            if(!$resultadoCarrito){
+                                die("Error SQL: " . $conexion->error);
+                            }
                         ?>
-
+                        
                         <li class="dropdown-header text-center fs-5">Carrito de Compras</li>
                         <li><hr class="dropdown-divider"></li>
 
@@ -96,12 +103,8 @@
                                             <option value="4">4</option>
                                             <option value="5">5</option>
                                         </select>
-                                        
-                                        <form action="borrar.php">
-                                            <button class="nav-link" name="borrarCarrito" href="borrar.php?idCarrito=<?php echo $datos['id_carrito'];?>" type="submit">
-                                                <img src="im/eliminar.png" alt="carrito" width="10" height="10"></img>
-                                            </button>
-                                        </form>
+                                        <button class="btn btn-light"onclick="eliminarCarrito(
+                                        <?php echo $datos['id_carrito']; ?>)"> 🗑️ </button>
                                     </div>
                                 </div>
                             </div>
