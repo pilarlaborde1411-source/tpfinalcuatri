@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ('conexion.php');
 $msjemail = "";
 //Verifica los campos vacios
@@ -6,23 +7,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = trim($_POST["nombre"]);
     $email = trim($_POST["email"]);
     $contrasena = trim($_POST["contrasena"]);
+
     if (empty($nombre) || empty($email) || empty($contrasena)) {
         die("Todos los campos son obligatorios");
     }
+
     //Verifica el correo
-    $consulta = "SELECT * FROM usuario WHERE email='$email'";
-    $resultado = mysqli_query($conexion, $consulta);
+    $resultado = $conexion -> query("SELECT * FROM usuario WHERE email='$email'");
     if (mysqli_num_rows($resultado)>0) {
         $msjemail = "El correo ya esta registrado.";
     } else {   // Encripta la contraseña e inserta usuarios
         $contraEncriptada = password_hash($contrasena, PASSWORD_DEFAULT);
-        $insertar= "INSERT INTO usuario(nombre, email, contra) VALUES ('$nombre','$email','$contraEncriptada')";
-        if(mysqli_query($conexion, $insertar)){
+        $sql_insert= "INSERT INTO usuario(nombre, email, contra) VALUES ('$nombre','$email','$contraEncriptada')";
+        if ($conexion->query($sql_insert) === TRUE) {
+            // Iniciar sesión automáticamente
+            $_SESSION['usuario'] = $nombre;
             header("location: index.php");
-        } else{
+        } else {
             echo "Error: ".mysqli_error($conexion);
         }
-    } 
+    }
 }
 ?>
 

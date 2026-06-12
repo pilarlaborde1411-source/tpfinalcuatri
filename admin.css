@@ -1,0 +1,11 @@
+.formulario{
+    display: none;
+}
+
+.formulario.activo{
+    display: block;
+}
+
+.sideBar {
+    min-height: 100vh;
+}
