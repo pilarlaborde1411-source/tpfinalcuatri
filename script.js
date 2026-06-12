@@ -9,7 +9,6 @@ function mostrar(id){ //Define función
     formulario.classList.add('activo'); //Agrega la clase activo al formulario seleccionado.
 }
 
-
 function showUser(str) { //busca dinamicamente con AJAX
     if (str ==""){ //si el carrito esta vacio no busca nada
         document.getElementById("txtHint")
