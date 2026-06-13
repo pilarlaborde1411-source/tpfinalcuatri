@@ -8,17 +8,17 @@ $sql="SELECT
 $resultado = mysqli_query($conexion,$sql);
 if(mysqli_num_rows($resultado)>0){
     echo "<!DOCTYPE html>
-        <html lang='en'>
-        <head>
-            <meta charset='UTF-8'>
-            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <title></title>
-            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet'>
-            <link rel='stylesheet' href='pantalon.css'>
-            <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js' integrity='sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q' crossorigin='anonymous'></script>
-        </head>
-        <body> ";
-          include ('navegacion.php'); 
+    <html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title></title>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <link rel='stylesheet' href='pantalon.css'>
+        <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js' integrity='sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q' crossorigin='anonymous'></script>
+    </head>
+    <body> ";
+    include ('navegacion.php'); 
     echo "<h1 style='text-align: center; text-transform: uppercase; text-family: Simple Dreams; text-font: 40px;'>".$nombreCategoria."</h1>";
     while ($productos=mysqli_fetch_assoc($resultado)) {
         echo "
@@ -33,7 +33,7 @@ if(mysqli_num_rows($resultado)>0){
                     </div>
                 </div>
             </div>
-            ";
+        ";
     }
 }
 ?>

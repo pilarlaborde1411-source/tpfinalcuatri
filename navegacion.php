@@ -43,7 +43,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-                        <img src="im/iconos/usuario.png" alt="Usuario"class="rounded-circle" width="40" height="40"></img>
+                        <img src="im/iconos/usuario.png" alt="Usuario" class="rounded-circle" width="40" height="40"></img>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="config.php">Configuración</a></li>

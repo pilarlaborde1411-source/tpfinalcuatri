@@ -35,7 +35,7 @@
                 move_uploaded_file($_FILES['agregar']['tmp_name'], $imgf);
             }
 
-            $sql_insert = "INSERT INTO producto (nombre, precio, imagen, id_categoria, color) VALUES ('$nombre', '$precio', '$img', '$categoria', '$color')";
+            $sql_insert = "INSERT INTO producto (nombre, precio, imagen, id_categoria, color) VALUES ('$nombre', '$precio', '$imgf', '$categoria', '$color')";
             if ($conexion->query($sql_insert) === TRUE) {
                 header('Location: index.php');
                 exit;
@@ -57,84 +57,102 @@
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3 col-lg-2 bg-dark text-white sideBar p-3">
-            <div class="d-grid gap-2 mt-4">
-                <button class="btn btn-outline-light" onclick="mostrar('carrusel')">Editar carrusel</button>
-                <button class="btn btn-outline-light" onclick="mostrar('agregarProducto')">Agregar producto</button>
-                <button class="btn btn-outline-light" onclick="mostrar('verProductos')">Ver productos</button>
-            </div>
-        </div>
-        <!-- Contenido -->
-        <div class="col-md-9 col-lg-10 p-4">
-            <!-- Editar carrusel -->
-            <div id="carrusel" class="formulario card p-4 mt-3">
-                <h3 class="font-monospace">Editar carrusel</h3>
-                <?php while($row = $resultadoCarrusel->fetch_assoc()):?>
-                <div>
-                    <?php if($row['imagen']){?>
-                        <img style='width: 30%; height: 20%;' src='data:image/webp;base64,<?php echo base64_encode($row['imagen'])?>' alt='imagen'>
-                        <form action='' method='POST' style='width: 30%;' enctype="multipart/form-data">
-                            <input hidden type='number' name='id' class='form-control mb-2' value='<?php echo ($row['id'])?>'>
-                            <label for="editar">Insertar nueva imágen</label> <br>
-                            <input type="file" accept="image/*" name="editar" required class="form-control mb-2" style="height: 38px;"> <br>
-                            <button type='submit' name="editarImagen" class="btn btn-outline-dark">Enviar</button>
-                        </form>
-                    <?php } ?>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-lg-2 bg-dark text-white sideBar p-3">
+                <div class="d-grid gap-2 mt-4">
+                    <button class="btn btn-outline-light" onclick="mostrar('carrusel')">Editar carrusel</button>
+                    <button class="btn btn-outline-light" onclick="mostrar('agregarProducto')">Agregar producto</button>
+                    <button class="btn btn-outline-light" onclick="mostrar('verProductos')">Ver productos</button>
                 </div>
-                <?php endwhile; ?>
             </div>
-            <!-- Agregar productos -->
-            <div id="agregarProducto" class="formulario card p-4 mt-3">
-                <div style="width: 100%; height:25%;">
-                    <h3 class="font-monospace">Agregar producto</h3>
-                    <form action="" method="POST" enctype="multipart/form-data" style="width: 100%;">
-                        <input type="text" name="nombre" class="form-control mb-2 mb-2" style="height: 38px;" placeholder="Ingresa el nombre">
-                        <input type="text" name="precio" class="form-control mb-2 mb-2" style="height: 38px;" placeholder="Ingresa el precio">
-                        <label for="agregar" class="mb-2">Insertar imágen</label>
-                        <input type="file" accept="image/*" name="agregar" class="form-control mb-2 mb-2" style="height: 38px;"> <br>
-                        <select name="carpeta" class="mb-2" style="height: 38px;"> 
-                            <option value="im/pantalones/">Pantalón</option>
-                            <option value="im/remeras/">Remeras</option>
-                            <option value="im/calzados/">Calzados</option>
-                            <option value="im/camperas/">Camperas</option>
-                        </select>
-                        <label for="categoria" class="mb-2">Seleccionar categoría</label>
-                        <select name="categoria" class="mb-2" style="height: 38px;"> 
-                            <?php 
-                                $sql_select = "SELECT * FROM categoria";
-                                $resultadoCategoria = mysqli_query($conexion, $sql_select);
-                                while ($row = $resultadoCategoria->fetch_assoc()): ?>
-                                    <option value="<?= $row['id']?>"><?= $row['nombre']?></option>
+            <!-- Contenido -->
+            <div class="col-md-9 col-lg-10 p-4">
+                <!-- Editar carrusel -->
+                <div id="carrusel" class="formulario card p-4 mt-3">
+                    <h3 class="font-monospace">Editar carrusel</h3>
+                    <?php while($row = $resultadoCarrusel->fetch_assoc()):?>
+                    <div>
+                        <?php if($row['imagen']){?>
+                            <img style='width: 30%; height: 20%;' src='data:image/webp;base64,<?php echo base64_encode($row['imagen'])?>' alt='imagen'>
+                            <form action='' method='POST' style='width: 30%;' enctype="multipart/form-data">
+                                <input hidden type='number' name='id' class='form-control mb-2' value='<?php echo ($row['id'])?>'>
+                                <label for="editar">Insertar nueva imágen</label> <br>
+                                <input type="file" accept="image/*" name="editar" required class="form-control mb-2" style="height: 38px;"> <br>
+                                <button type='submit' name="editarImagen" class="btn btn-outline-dark">Enviar</button>
+                            </form>
+                        <?php } ?>
+                    </div>
+                    <?php endwhile; ?>
+                </div>
+                <!-- Agregar productos -->
+                <div id="agregarProducto" class="formulario card p-4 mt-3">
+                    <div style="width: 100%; height:25%;">
+                        <h3 class="font-monospace">Agregar producto</h3>
+                        <form action="" method="POST" enctype="multipart/form-data" style="width: 100%;">
+                            <input type="text" name="nombre" class="form-control mb-2 mb-2" style="height: 38px;" placeholder="Ingresa el nombre">
+                            <input type="text" name="precio" class="form-control mb-2 mb-2" style="height: 38px;" placeholder="Ingresa el precio">
+                            <label for="agregar" class="mb-2">Insertar imágen</label>
+                            <input type="file" accept="image/*" name="agregar" class="form-control mb-2 mb-2" style="height: 38px;"> <br>
+                            <label for="carpeta" class="mb-2">Seleccionar la carpeta</label>
+                            <select name="carpeta" class="mb-2" style="height: 38px;"> 
+                                <option value="im/pantalones/">Pantalón</option>
+                                <option value="im/remeras/">Remeras</option>
+                                <option value="im/calzados/">Calzados</option>
+                                <option value="im/camperas/">Camperas</option>
+                            </select> <br>
+                            <label for="categoria" class="mb-2">Seleccionar categoría</label>
+                            <select name="categoria" class="mb-2" style="height: 38px;"> 
+                                <?php 
+                                    $sql_select = "SELECT * FROM categoria";
+                                    $resultadoCategoria = mysqli_query($conexion, $sql_select);
+                                    while ($row = $resultadoCategoria->fetch_assoc()): ?>
+                                        <option value="<?= $row['id']?>"><?= $row['nombre']?></option>
+                                    <?php endwhile; ?>
+                            </select>
+                            <input type="text" name="color" class="form-control mb-2 mb-2" style="height: 38px;" placeholder="Ingresa el color">
+                            <button type="submit" name="agregarProducto" class="btn btn-outline-dark">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Ver prodcutos -->
+                <div id="verProductos" class="formulario card p-4 mt-3">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover align-middle">
+                            <tbody>
+                                <?php
+                                    $resultadoProducto = $conexion->query("SELECT * FROM producto");
+                                    while($row = $resultadoProducto->fetch_assoc()):
+                                ?>
+                                <tr>
+                                    <td>
+                                        <img src="<?= htmlspecialchars($row['imagen']) ?>" style="width:80px;height:80px;object-fit:cover;">
+                                    </td>
+                                    <td><?= htmlspecialchars($row['nombre']) ?></td>
+                                    <td>$<?= htmlspecialchars($row['precio']) ?></td>
+                                    <td><?= htmlspecialchars($row['id_categoria']) ?></td>
+                                    <td><?= htmlspecialchars($row['color']) ?></td>
+                                    <td>
+                                        <div class="d-flex gap-1">
+                                            <form method="POST" action="editar.php">
+                                                <button class="btn btn-sm btn-outline-primary" name="id" type="submit" value="<?= $row['id'] ?>">
+                                                    <img src="im/iconos/editar.png" width="16">
+                                                </button>
+                                            </form>
+                                            <form method="POST" action="borrar.php">
+                                                <button class="btn btn-sm btn-outline-danger" name="delete" type="submit" value="<?= $row['id'] ?>">
+                                                    <img src="im/iconos/eliminar.png" width="16">
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
                                 <?php endwhile; ?>
-                        </select>
-                        <input type="text" name="color" class="form-control mb-2 mb-2" style="height: 38px;" placeholder="Ingresa el color">
-                        <button type="submit" name="agregarProducto" class="btn btn-outline-dark">Enviar</button>
-                    </form>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <!-- Ver prodcutos -->
-            <div id="verProductos" class="formulario card p-4 mt-3">
-                <h3>Ver productos</h3>
-                <?php $resultadoProducto = $conexion -> query("SELECT * FROM producto"); while($row = $resultadoProducto->fetch_assoc()):?>
-                <div>
-                    <?php if($row['imagen']) { ?>
-                       <img style='width: 30%; height: 20%;' src='im/<?php echo $row['imagen']?>' alt='imagen'>
-                        <p>nombre: <?=htmlspecialchars($row['nombre'])?></p>
-                        <p> precio: <?=htmlspecialchars($row['precio'])?></p>
-                        <p> categoria: <?=htmlspecialchars($row['id_categoria'])?></p>
-                        <p> color: <?=htmlspecialchars($row['color'])?></p>
-                        <form method="POST" action="editar.php" style='width: 30%;' enctype="multipart/form-data">
-                            <button class="btn btn-outline-dark" name="id" type="submit" value="<?=$row['id']?>"><img src="im/iconos/gmail.png"></button>
-                        </form>
-                        <form method="POST" action="borrar.php" style='width: 30%;' enctype="multipart/form-data">
-                            <button class="btn btn-outline-dark" name="delete" type="submit" value="<?=$row['id']?>"><img src="im/iconos/gmail.png"></button>
-                        </form>
-                    <?php } ?>
-                </div>
-                <?php endwhile; ?>
-            <div>
         </div>
     </div>
     <script src="script.js"></script>
