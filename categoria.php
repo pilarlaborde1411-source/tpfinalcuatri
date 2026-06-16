@@ -14,7 +14,7 @@ if(mysqli_num_rows($resultado)>0){
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
         <title></title>
         <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet'>
-        <link rel='stylesheet' href='index.css'>
+        <link rel='stylesheet' href='pantalon.css'>
         <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js' integrity='sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q' crossorigin='anonymous'></script>
     </head>
     <body> ";
@@ -22,7 +22,7 @@ if(mysqli_num_rows($resultado)>0){
     echo "<h1 style='text-align: center; text-transform: uppercase; text-family: Simple Dreams; text-font: 40px;'>".$nombreCategoria."</h1>";
     while ($productos=mysqli_fetch_assoc($resultado)) {
         echo "
-            <div class='card' style='width: 25rem; margin: 20px; display: inline-block;'>
+            <div class='card' style='width: 25rem; margin: 40px; display: inline-block;'>
                 <img src='".$productos['imagen']."' class='card-img-top' alt='' style='height: 500px; width: 100%;'>
                 <div class='card-body'>
                 <div class='col-md-4 mb-4'> <a href='detalle.php?id_producto=".$productos['id']."' style='text-decoration: none; color: black;'>
@@ -39,6 +39,5 @@ else{
     echo "no hay productos de la categoria" . $categoria;
 }
 ?>
-<?php include 'footer.php'?>
  </body>
  </html>
