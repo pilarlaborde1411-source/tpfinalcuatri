@@ -16,7 +16,7 @@
     p.id, p.nombre, p.precio, p.imagen, p.id_categoria, p.color FROM producto p WHERE p.id = " . $_GET['id_producto'];
     $resultado = mysqli_query($conexion,$sql);
     if (mysqli_num_rows ($resultado) > 0){
-      while($datos = mysqli_fetch_assoc($resultado)){
+      while($datos = mysqli_fetch_assoc($resultado)){ 
         ?>
         <div style='width: 550px; height: 550px; float:right; margin:5%; font-size: 25px; padding-top: 5%; font-family: Simple Dreams; margin-left: 10px;'>
           <h1 style='font-size: 80px;'><?php echo $datos['nombre']; ?></h1> 
@@ -46,20 +46,7 @@
         <?php
       }
     }
-
-    
+    include 'footer.php';
     ?>
-    <footer class="pie"> 
-  <footer>
-        <hr>
-        <div class="foot" id="redes">
-            <a href="https://ar.pinterest.com/"><div id="pinterest" class="logo"></div></a>
-            <a href="https://x.com/?lang=es"><div id="twitter"  class="logo"></div></a>
-            <a href="https://www.instagram.com/"><div id="instagram" class="logo"></div>
-            <a href=""><div id="youtube" class="logo"></div></a>
-            <a href="https://www.facebook.com/?locale=es_LA"><div id="facebook" class="logo"></div></a>
-        </div>
-    </footer>
-</footer>
 </body>
 </html>
