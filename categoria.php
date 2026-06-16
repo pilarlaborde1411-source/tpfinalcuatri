@@ -29,11 +29,13 @@ if(mysqli_num_rows($resultado)>0){
                 <h5 class='card-title'>".$productos['nombre']."</h5>
                 <br>
                 <h3> $ ".$productos['precio']."</h3>
+                </div>
                 <?php
                 <form method='GET' action='agregarCarrito.php'>
                 <input hidden name='id' value='".$productos['id']."'>
                     <button class='btn btn-outline-dark' type='submit'> Agregar al carrito</button>
                 </form>
+                </div>
             </div>
         ";
     }
