@@ -59,8 +59,7 @@
                     <img src="im/iconos/carrito.png" alt="carrito" width="40" height="40">
                 </a>
                     <!--id eequivale al txtHint -->
-                    <ul id="contenidoCarrito"
-                    class="dropdown-menu dropdown-menu-end cart-menu" 
+                    <ul id="contenidoCarrito" class="dropdown-menu dropdown-menu-end cart-menu" 
                     style="width: 500px; eight:500px; padding: 15px;border-radius: 15px;">
                         <?php 
                             $idUsuario = $_SESSION['id_usuario'];

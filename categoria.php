@@ -35,6 +35,7 @@ if(mysqli_num_rows($resultado)>0){
         ";
     }
 }
+
 else{
     echo "no hay productos de la categoria" . $categoria;
 }
