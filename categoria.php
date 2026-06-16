@@ -29,8 +29,11 @@ if(mysqli_num_rows($resultado)>0){
                 <h5 class='card-title'>".$productos['nombre']."</h5>
                 <br>
                 <h3> $ ".$productos['precio']."</h3>
-                <a href='agregarCarrito.php?id=".$productos['id']."' class='btn btn-primary'>
-                Agregar al carrito</a>
+                <?php
+                <form method='GET' action='agregarCarrito.php'>
+                <input hidden name='id' value='".$productos['id']."'>
+                    <button class='btn btn-outline-dark' type='submit'> Agregar al carrito</button>
+                </form>
             </div>
         ";
     }
@@ -39,7 +42,7 @@ if(mysqli_num_rows($resultado)>0){
 else{
     echo "no hay productos de la categoria" . $categoria;
 }
-include 'footer.php';
 ?>
+<?php include 'footer.php' ?>
  </body>
  </html>
