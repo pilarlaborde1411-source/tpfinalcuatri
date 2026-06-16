@@ -54,7 +54,7 @@
             <!-- Carrito -->
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                <a class="btn btn-light position-relative"
+                <a class="btn position-relative"
                     href="#" role="button" data-bs-toggle="dropdown">
                     <img src="im/iconos/carrito.png" alt="carrito" width="40" height="40">
                 </a>
