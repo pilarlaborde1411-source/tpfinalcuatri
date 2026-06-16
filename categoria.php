@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ('conexion.php');
 $categoria= $_GET['id']; 
 $nombreCategoria = mysqli_query($conexion, "SELECT nombre FROM categoria WHERE id = $categoria"); 
