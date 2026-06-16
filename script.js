@@ -29,8 +29,13 @@ function eliminarCarrito(idCarrito){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState==4 && this.status ==200) {
+            location.reload(); //recarga 
         }
     }
-    xmlhttp.open("POST", "borrar.php" +str, true); //envia a borrar.php
-    xmlhttp.send();
+    xmlhttp.open("POST", "borrar.php", true); //envia a borrar.php
+    xmlhttp.setRequestHeader(
+        "Content-type",
+        "application/x-www-form-urlencoded"
+    );
+    xmlhttp.send("idCarrito=" + idCarrito);
 }

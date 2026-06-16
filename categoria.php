@@ -25,16 +25,18 @@ if(mysqli_num_rows($resultado)>0){
             <div class='card' style='width: 25rem; margin: 40px; display: inline-block;'>
                 <img src='".$productos['imagen']."' class='card-img-top' alt='' style='height: 500px; width: 100%;'>
                 <div class='card-body'>
-                    <div class='col-md-4 mb-4'> <a href='detalle.php?id_producto=".$productos['id']."' style='text-decoration: none; color: black;'>
-                        <h5 class='card-title'>".$productos['nombre']."</h5>
-                        <br>
-                        <h3> $ ".$productos['precio']."</h3>
-                        <button style= 'margin-left: 85% ; width: 150px; font-family: Simple Dreams; border-radius: 15px;' class='btn btn-outline-dark' onclick='comprar()'>Agregar al Carrito</button>
-                    </div>
-                </div>
+                <div class='col-md-4 mb-4'> <a href='detalle.php?id_producto=".$productos['id']."' style='text-decoration: none; color: black;'>
+                <h5 class='card-title'>".$productos['nombre']."</h5>
+                <br>
+                <h3> $ ".$productos['precio']."</h3>
+                <a href='agregarCarrito.php?id=".$productos['id']."' class='btn btn-primary'>
+                Agregar al carrito</a>
             </div>
         ";
     }
+}
+else{
+    echo "no hay productos de la categoria" . $categoria;
 }
 ?>
  </body>

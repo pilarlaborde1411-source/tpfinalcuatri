@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php
+    session_start();
     include 'navegacion.php';
     include 'conexion.php';
     $sql = "SELECT 

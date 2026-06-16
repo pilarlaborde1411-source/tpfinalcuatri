@@ -69,7 +69,7 @@
                             $resultadoCarrito = $conexion->query($sql);
                             
                             if(!$resultadoCarrito){
-                                die("Error SQL: " . $conexion->error);
+                                die("Error SQL: " . mysqli_error($conexion));
                             }
                         ?>
                         
