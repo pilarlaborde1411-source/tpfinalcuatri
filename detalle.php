@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del producto</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="detalle.css">
+    <link rel="stylesheet" href="index.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -22,7 +22,7 @@
         <div style='width: 550px; height: 550px; float:right; margin:5%; font-size: 25px; padding-top: 5%; font-family: Simple Dreams; margin-left: 10px;'>
           <h1 style='font-size: 80px;'><?php echo $datos['nombre']; ?></h1> 
           <p style='font-size: 30px;'>$ <?php echo $datos['precio']; ?></p>
-          <hr class='linea'>
+          <hr class='linea' style=' border: 1px solid #000; margin-top: 20px; margin-bottom: 10px; width: 100%;'>
           <select name='talle' class='mb-2' style='height: 38px;'>
             <?php
               $sql_select = "SELECT * FROM talle";
