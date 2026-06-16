@@ -16,21 +16,21 @@
 <?php include 'navegacion.php'?>
 
 <h1 style="margin: 2% auto 0; text-align: center; font-family: bricolage grotesque;">Sobre Nosotros</h1>
-<div style="display: flex; justify-content: space-between; align-items: flex-start; margin: 2% 10%;">
-    <div>
-        <h2 style="margin-top:8%; font-family: bricolage grotesque;">
-          <img src="im/iconos/whatsap.png" alt="" style="width: 10%;">
+<div style="margin-top: 2%;">
+    <div style="margin-left: 10%; margin-right: 5%;">
+        <h2 style="margin-top:8%; font-family: bricolage grotesque; font-size: 25px;">
+          <img src="im/iconos/whatsap.png" alt="" style="width: 5%;">
           +54 001 234567</h2>
 
-        <h2 style="margin-top: 10%; font-family: bricolage grotesque;">
-          <img src="im/iconos/gmail.png" alt="" style="width: 10%;">
+        <h2 style="margin-top: 4%; font-family: bricolage grotesque; font-size: 25px;">
+          <img src="im/iconos/gmail.png" alt="" style="width: 5%;">
           bubba.store@gmail.com</h2>
 
-        <h2 style="margin-top: 12%; font-family: bricolage grotesque;">
-          Te espeamos<img src="im/iconos/coraozn.png" alt="" style="width: 6%;"></h2>
+        <h2 style="margin-top: 4%; font-family: bricolage grotesque; font-size: 25px;">
+          Te espeamos<img src="im/iconos/coraozn.png" alt="" style="width: 4%;"></h2>
     </div>
     
-    <div class="col-lg-7">
+    <div class="maps" style="width: 50%; margin-top: 3%; margin-left: 30%; margin-right: 10%;">
       <div class="card shadow border-0 rounded-4 overflow-hidden">
           <h5>📍 Calle 85 entre 4 y 2</h5>
         <iframe
