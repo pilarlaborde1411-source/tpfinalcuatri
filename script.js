@@ -9,7 +9,7 @@ function mostrar(id){ //Define función
     formulario.classList.add('activo'); //Agrega la clase activo al formulario seleccionado.
 }
 
-function showUser(str) { //busca dinamicamente con AJAX
+/*function showUser(str) { //busca dinamicamente con AJAX
     if (str ==""){ //si el carrito esta vacio no busca nada
         document.getElementById("txtHint")
         return;
@@ -24,18 +24,14 @@ function showUser(str) { //busca dinamicamente con AJAX
     xmlhttp.open("GET", "family.php?q=" +str, true); //envia el texto al archivo family.php
     xmlhttp.send(); //ejecuta la accion
     }
-}
+}*/
 function eliminarCarrito(idCarrito){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState==4 && this.status ==200) {
-            location.reload(); //recarga 
+            location.reload(); //recarga la pag para actualizar el carrito
         }
     }
-    xmlhttp.open("POST", "borrar.php", true); //envia a borrar.php
-    xmlhttp.setRequestHeader(
-        "Content-type",
-        "application/x-www-form-urlencoded"
-    );
-    xmlhttp.send("idCarrito=" + idCarrito);
+    xmlhttp.open("POST", "borrar.php?idCarrito="+idCarrito, true); 
+    xmlhttp.send();
 }
