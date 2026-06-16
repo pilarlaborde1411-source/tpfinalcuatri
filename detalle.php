@@ -13,7 +13,7 @@
     include 'navegacion.php';
     include 'conexion.php';
     $sql = "SELECT 
-    p.id, p.nombre, p.precio, p.id_talle, p.imagen, p.id_categoria, p.color, t.talle AS talle FROM producto p INNER JOIN talle t ON p.id_talle = t.id WHERE p.id = " . $_GET['id_producto'];
+    p.id, p.nombre, p.precio, p.imagen, p.id_categoria, p.color FROM producto p WHERE p.id = " . $_GET['id_producto'];
     $resultado = mysqli_query($conexion,$sql);
     if (mysqli_num_rows ($resultado) > 0){
       while($datos = mysqli_fetch_assoc($resultado)){
