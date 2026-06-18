@@ -14,10 +14,10 @@
                     <a class="nav-link active" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="nosotros.php">Nosotros</a>
+                    <a class="nav-link" href="oferta.php?id=6">Ofertas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="oferta.php?id=6">Ofertas</a>
+                    <a class="nav-link" href="nosotros.php">Nosotros</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Colecciones</a>
