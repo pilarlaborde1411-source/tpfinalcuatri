@@ -144,19 +144,28 @@
                 <div id="carrusel" class="formulario card p-4 mt-3">
                     <h3 class="font-monospace">Editar carrusel</h3>
                     <div class="d-flex flex-wrap gap-4">
-                        <?php while($row = $resultadoCarrusel->fetch_assoc()): ?>
-                            <?php if($row['imagen']){ ?>
+                        <?php if(mysqli_num_rows($resultadoCarrusel) == 0): ?>
+                            <div class="card p-3" style="width: 300px;">
+                                <p>No hay imágenes en el carrusel.</p>
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <label>Insertar imagen</label>
+                                    <input type="file" accept="image/*" name="editar" required class="form-control mb-2">
+                                    <button type="submit" name="agregarImagenCarrusel" class="btn btn-outline-dark">Agregar</button>
+                                </form>
+                            </div>
+                        <?php else: ?>
+                            <?php while($row = $resultadoCarrusel->fetch_assoc()): ?>
                                 <div class="card p-3" style="width: 300px;">
-                                    <img class="img-fluid mb-3" src="data:image/webp;base64,<?php echo base64_encode($row['imagen'])?>" alt="imagen">
+                                    <img class="img-fluid mb-3" src="data:image/webp;base64,<?= base64_encode($row['imagen']) ?>" alt="imagen">
                                     <form action="" method="POST" enctype="multipart/form-data">
-                                        <input hidden type="number" name="id" value="<?php echo $row['id'] ?>">
-                                        <label for="editar">Insertar nueva imagen</label>
+                                        <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                                        <label>Insertar nueva imagen</label>
                                         <input type="file" accept="image/*" name="editar" required class="form-control mb-2">
-                                        <button type="submit" name="editarImagen" class="btn btn-outline-dark">Enviar</button>
+                                        <button type="submit" name="editarImagen" class="btn btn-outline-dark"> Enviar </button>
                                     </form>
                                 </div>
-                            <?php } ?>
-                        <?php endwhile; ?>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <!-- Agregar productos -->
