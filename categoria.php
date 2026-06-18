@@ -23,19 +23,14 @@ if(mysqli_num_rows($resultado)>0){
     echo "<h1 style='text-align: center; text-transform: uppercase; text-family: Simple Dreams; text-font: 40px;'>".$nombreCategoria."</h1>";
     while ($productos=mysqli_fetch_assoc($resultado)) {
         echo "
-            <div class='card' style='width: 25rem; margin: 20px; display: inline-block;'>
+            <div class='card' style='width: 25rem; margin: 20px; display: inline-block;'> <a href='detalle.php?id_producto=".$productos['id']."' style='text-decoration: none; color: black;'>
                 <img src='".$productos['imagen']."' class='card-img-top' alt='' style='height: 500px; width: 100%;'>
                 <div class='card-body'>
-                <div class='col-md-4 mb-4'> <a href='detalle.php?id_producto=".$productos['id']."' style='text-decoration: none; color: black;'>
-                <h5 class='card-title'>".$productos['nombre']."</h5>
-                <br>
-                <h3> $ ".$productos['precio']."</h3>
-                </div>
-                <?php
-                <form method='GET' action='agregarCarrito.php'>
-                <input hidden name='id' value='".$productos['id']."'>
-                    <button class='btn btn-outline-dark' type='submit'> Agregar al carrito</button>
-                </form>
+                    <div class='col-md-4 mb-4'> 
+                        <h5 class='card-title'>".$productos['nombre']."</h5>
+                        <br>
+                        <h3> $ ".$productos['precio']."</h3>
+                    </div>
                 </div>
             </div>
         ";
