@@ -58,10 +58,8 @@
                     href="#" role="button" data-bs-toggle="dropdown">
                     <img src="im/iconos/carrito.png" alt="carrito" width="40" height="40">
                 </a>
-                    <!--id eequivale al txtHint -->
-                    <ul id="contenidoCarrito"
-                    class="dropdown-menu dropdown-menu-end cart-menu" 
-                    style="width: 500px; eight:500px; padding: 15px;border-radius: 15px;">
+                    <ul id="carrito" class="dropdown-menu dropdown-menu-end cart-menu" 
+                        style="width: 500px; eight:500px; padding: 15px;border-radius: 15px;">
                         <?php 
                             $idUsuario = $_SESSION['id_usuario'];
                             $sql = "SELECT carrito.id AS id_carrito, producto.* FROM carrito INNER JOIN producto ON carrito.`id-producto` = producto.id WHERE carrito.`id-usuario` = '$idUsuario'";
@@ -103,8 +101,7 @@
                                             <option value="4">4</option>
                                             <option value="5">5</option>
                                         </select>
-                                        <button type="button" class="btn btn-light"onclick="eliminarCarrito(
-                                            <?php echo $datos['id_carrito']; ?>)">
+                                        <button type="button" class="btn btn-light" onclick="eliminarCarrito(<?php echo $datos['id_carrito']; ?>)">
                                             <img src="im/iconos/eliminar.png" alt="carrito" width="20" height="20"></img>
                                         </button>
                                     </div>
@@ -124,3 +121,4 @@
         </div>
     </div>
 </nav>
+<script src="script.js"></script>

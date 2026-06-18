@@ -12,16 +12,10 @@ function mostrar(id){ //Define función
 function eliminarCarrito(idCarrito){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-        if (this.readyState==4 && this.status ==200) {
-            location.reload(); //recarga la pag para actualizar el carrito
+    if (this.readyState==4 && this.status ==200) {
+        location.reload(); //recarga la pag para actualizar el carrito
         }
     }
-    xmlhttp.open("POST", "borrar.php", true);
-    // envia datos formulario
-    xmlhttp.setRequestHeader(
-        "Content-type",
-        "application/x-www-form-urlencoded"
-    );
-    // envia id del carrito
-    xmlhttp.send("idCarrito=" + idCarrito);
+    xmlhttp.open("GET", "borrar.php?idCarrito="+idCarrito, true); 
+    xmlhttp.send();
 }
