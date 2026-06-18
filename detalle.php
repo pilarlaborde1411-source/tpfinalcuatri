@@ -37,7 +37,10 @@
           
           <br>
           <div style='margin-top: 20%; margin-left: 10%;'>
-            <button style='width: 150px; height: 50px;' class='btn btn-outline-dark' onclick='comprar()'>Agregar al Carrito</button>
+            <form method='GET' action="agregarCarrito.php">
+                <input hidden name='id' value= "<?php echo $datos['id']; ?>">
+                    <button class='btn btn-outline-dark' type="submit"> Agregar al carrito</button>
+                </form>
           </div>
         </div>
         <div style='display: flex; margin-top: 3%; justify-content: center; margin-right: 2px;'>

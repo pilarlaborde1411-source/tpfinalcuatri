@@ -103,7 +103,7 @@
                                             <option value="4">4</option>
                                             <option value="5">5</option>
                                         </select>
-                                        <button class="btn btn-light"onclick="eliminarCarrito(
+                                        <button type="button" class="btn btn-light"onclick="eliminarCarrito(
                                             <?php echo $datos['id_carrito']; ?>)">
                                             <img src="im/iconos/eliminar.png" alt="carrito" width="20" height="20"></img>
                                         </button>
