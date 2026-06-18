@@ -16,9 +16,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="oferta.php?id=6">Ofertas</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="nosotros.php">Nosotros</a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Colecciones</a>
                     <ul class="dropdown-menu">
@@ -28,6 +25,9 @@
                         <li><a class="dropdown-item" href="categoria.php?id=4">Camperas</a></li>
                         <li><a class="dropdown-item" href="categoria.php?id=5">Joyas</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="nosotros.php">Nosotros</a>
                 </li>
                 <li class="nav-item">
                     <?php
