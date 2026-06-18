@@ -1,14 +1,4 @@
-<?php
-session_start();
-include ('conexion.php');
-$categoria= $_GET['id']; 
-$nombreCategoria = mysqli_query($conexion, "SELECT nombre FROM categoria WHERE id = $categoria"); 
-$nombreCategoria = mysqli_fetch_assoc($nombreCategoria)['nombre'];
-$sql="SELECT 
-    p.id, p.nombre, p.precio, p.imagen, p.id_categoria, c.nombre AS categoria FROM producto p INNER JOIN categoria c ON p.id_categoria = c.id WHERE p.id_categoria = $categoria";
-$resultado = mysqli_query($conexion,$sql);
-if(mysqli_num_rows($resultado)>0){
-    echo "<!DOCTYPE html>
+<!DOCTYPE html>
     <html lang='en'>
     <head>
         <meta charset='UTF-8'>
@@ -18,8 +8,18 @@ if(mysqli_num_rows($resultado)>0){
         <link rel='stylesheet' href='index.css'>
         <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js' integrity='sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q' crossorigin='anonymous'></script>
     </head>
-    <body> ";
-    include ('navegacion.php'); 
+    <body>
+        <?php
+        session_start();
+         include ('navegacion.php'); 
+include ('conexion.php');
+$categoria= $_GET['id']; 
+$nombreCategoria = mysqli_query($conexion, "SELECT nombre FROM categoria WHERE id = $categoria"); 
+$nombreCategoria = mysqli_fetch_assoc($nombreCategoria)['nombre'];
+$sql="SELECT 
+    p.id, p.nombre, p.precio, p.imagen, p.id_categoria, c.nombre AS categoria FROM producto p INNER JOIN categoria c ON p.id_categoria = c.id WHERE p.id_categoria = $categoria";
+$resultado = mysqli_query($conexion,$sql);
+if(mysqli_num_rows($resultado)>0){
     echo "<h1 style='text-align: center; text-transform: uppercase; text-family: Simple Dreams; text-font: 40px;'>".$nombreCategoria."</h1>";
     while ($productos=mysqli_fetch_assoc($resultado)) {
         echo "
@@ -43,7 +43,7 @@ if(mysqli_num_rows($resultado)>0){
 }
 
 else{
-    echo "no hay productos de la categoria" . $categoria;
+    echo "no hay productos de la categoria " . $nombreCategoria;
 }
 ?>
 <?php include 'footer.php' ?>
