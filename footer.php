@@ -1,4 +1,4 @@
-<div  style="float:bottom; display: block;" >
+
 <footer>
     <div class="foot" id="redes">
       <a href=""><img src="im/footer/pinterest.png" alt="" class="logo"></a>
@@ -8,4 +8,3 @@
       <a href=""><img src="im/footer/facebook.png" alt="" class="logo"></a>
     </div>
 </footer>
-</div>
