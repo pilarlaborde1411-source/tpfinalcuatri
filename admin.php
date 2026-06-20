@@ -9,7 +9,7 @@
                 $imagen = addslashes(file_get_contents($_FILES['editar']['tmp_name'])); //Toma la imágen temporal y la guarda en una varibale.
                 $sql_update = "UPDATE carrusel SET imagen = '$imagen' WHERE id = '$newid'";
                 if ($conexion->query($sql_update) === TRUE) {
-                    header('Location: index.php');
+                    header('Location: admin.php');
                     exit;
                 } else {
                     echo "Error al editar el carrusel: " . $conexion->error;
@@ -25,7 +25,7 @@
             $color = $_POST['color'];
             $img = null;
             $carpeta = $_POST['carpeta'];
-
+        
             if(isset($_FILES['agregar']) && $_FILES['agregar']['error'] == 0) {
                 if(!is_dir($carpeta)) {
                     mkdir($carpeta,0777,true);
@@ -37,13 +37,28 @@
 
             $sql_insert = "INSERT INTO producto (nombre, precio, imagen, id_categoria, color) VALUES ('$nombre', '$precio', '$imgf', '$categoria', '$color')";
             if ($conexion->query($sql_insert) === TRUE) {
-                header('Location: index.php');
+                header('Location: admin.php');
                 exit;
             } 
             else {
                 echo "Error al agregar el producto." . $conexion->error;
             }
             $conexion->close();
+        }
+        //Editar producto
+        if(isset($_POST['editarProducto'])){
+            $id = $_POST['id']; 
+            $newNombre = $_POST['editarNombre'];
+            $newPrecio = $_POST['editarPrecio'];
+            $newColor = $_POST['editarColor'];
+            
+            $sql = "UPDATE producto SET nombre='$newNombre', precio='$newPrecio', imagen='$newImagen', color='$newColor' WHERE id='$id' ";
+            if($conexion->query($sql)){
+                header("Location: admin.php");
+                exit;
+            } else {
+                echo $conexion->error;
+            }
         }
     }
 ?>
@@ -107,7 +122,7 @@
                                 </tr>
                             </thead>
                             <?php
-                                $resultadoProducto = $conexion->query("SELECT * FROM producto");
+                                $resultadoProducto = $conexion->query("SELECT producto.*, categoria.nombre AS categoria_nombre FROM producto INNER JOIN categoria ON producto.id_categoria = categoria.id ORDER BY producto.id DESC LIMIT 5");
                                 if(mysqli_num_rows($resultadoProducto) == 0){ ?>
                             <tr>
                                 <td colspan="6" class="text-center"> No hay productos en la base de datos.</td>
@@ -119,15 +134,21 @@
                                 </td>
                                 <td><?= htmlspecialchars($row['nombre']) ?></td>
                                 <td>$<?= htmlspecialchars($row['precio']) ?></td>
-                                <td><?= htmlspecialchars($row['id_categoria']) ?></td>
+                                <td><?= htmlspecialchars($row['categoria_nombre']) ?></td>
                                 <td><?= htmlspecialchars($row['color']) ?></td>
                                 <td>
                                     <div class="d-flex gap-1">
-                                        <form method="POST" action="editar.php">
-                                            <button class="btn btn-sm btn-outline-primary" name="editar" type="submit" value="<?= $row['id'] ?>">
-                                                <img src="im/iconos/editar.png" width="16">
-                                            </button>
-                                        </form>
+                                        <button class="btn btn-sm btn-outline-primary" 
+                                            onclick="editarProducto( 
+                                                '<?= $row['id'] ?>', 
+                                                '<?= htmlspecialchars($row['nombre']) ?>',
+                                                '<?= $row['precio'] ?>',
+                                                '<?= $row['imagen']?>',
+                                                '<?= $row['id_categoria'] ?>',
+                                                '<?= $row['color'] ?>'
+                                            )">
+                                            <img src="im/iconos/editar.png" width="16">
+                                        </button>
                                         <form method="POST" action="borrar.php">
                                             <button class="btn btn-sm btn-outline-danger" name="eliminarProducto" type="submit" value="<?= $row['id'] ?>">
                                                 <img src="im/iconos/eliminar.png" width="16">
@@ -144,28 +165,19 @@
                 <div id="carrusel" class="formulario card p-4 mt-3">
                     <h3 class="font-monospace">Editar carrusel</h3>
                     <div class="d-flex flex-wrap gap-4">
-                        <?php if(mysqli_num_rows($resultadoCarrusel) == 0): ?>
-                            <div class="card p-3" style="width: 300px;">
-                                <p>No hay imágenes en el carrusel.</p>
-                                <form action="" method="POST" enctype="multipart/form-data">
-                                    <label>Insertar imagen</label>
-                                    <input type="file" accept="image/*" name="editar" required class="form-control mb-2">
-                                    <button type="submit" name="agregarImagenCarrusel" class="btn btn-outline-dark">Agregar</button>
-                                </form>
-                            </div>
-                        <?php else: ?>
-                            <?php while($row = $resultadoCarrusel->fetch_assoc()): ?>
+                        <?php while($row = $resultadoCarrusel->fetch_assoc()): ?>
+                            <?php if($row['imagen']){ ?>
                                 <div class="card p-3" style="width: 300px;">
-                                    <img class="img-fluid mb-3" src="data:image/webp;base64,<?= base64_encode($row['imagen']) ?>" alt="imagen">
+                                    <img class="img-fluid mb-3" src="data:image/jpg;base64,<?php echo base64_encode($row['imagen'])?>" alt="imagen">
                                     <form action="" method="POST" enctype="multipart/form-data">
-                                        <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                                        <label>Insertar nueva imagen</label>
+                                        <input hidden type="number" name="id" value="<?php echo $row['id'] ?>">
+                                        <label for="editar">Insertar nueva imagen</label>
                                         <input type="file" accept="image/*" name="editar" required class="form-control mb-2">
-                                        <button type="submit" name="editarImagen" class="btn btn-outline-dark"> Enviar </button>
+                                        <button type="submit" name="editarImagen" class="btn btn-outline-dark">Enviar</button>
                                     </form>
                                 </div>
-                            <?php endwhile; ?>
-                        <?php endif; ?>
+                            <?php } ?>
+                        <?php endwhile; ?>
                     </div>
                 </div>
                 <!-- Agregar productos -->
@@ -203,8 +215,18 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-hover align-middle">
                             <tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Imágen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th>Categoría</th>
+                                        <th>Color</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
                                 <?php
-                                    $resultadoProducto = $conexion->query("SELECT * FROM producto");
+                                    $resultadoProducto = $conexion->query("SELECT producto.*, categoria.nombre AS categoria_nombre FROM producto INNER JOIN categoria ON producto.id_categoria = categoria.id");
                                     if(mysqli_num_rows($resultadoProducto) == 0){ ?>
                                 <tr>
                                     <td colspan="6" class="text-center">No hay productos en la base de datos.</td>
@@ -215,16 +237,21 @@
                                         <img src="<?= htmlspecialchars($row['imagen']) ?>" style="width:80px;height:80px;object-fit:cover;">
                                     </td>
                                     <td><?= htmlspecialchars($row['nombre']) ?></td>
-                                    <td>$<?= htmlspecialchars($row['precio']) ?></td>
-                                    <td><?= htmlspecialchars($row['id_categoria']) ?></td>
+                                    <td>$<?=($row['precio']) ?></td>
+                                    <td><?= htmlspecialchars($row['categoria_nombre']) ?></td>
                                     <td><?= htmlspecialchars($row['color']) ?></td>
                                     <td>
                                         <div class="d-flex gap-1">
-                                            <form method="POST" action="editar.php">
-                                                <button class="btn btn-sm btn-outline-primary" name="editar" type="submit" value="<?= $row['id'] ?>">
-                                                    <img src="im/iconos/editar.png" width="16">
-                                                </button>
-                                            </form>
+                                            <button class="btn btn-sm btn-outline-primary" 
+                                                onclick="editarProducto(
+                                                    '<?= $row['id'] ?>', 
+                                                    '<?= htmlspecialchars($row['nombre']) ?>',
+                                                    '<?= $row['precio'] ?>',
+                                                    '<?= $row['imagen']?>',
+                                                    '<?= $row['color'] ?>'
+                                                )">
+                                                <img src="im/iconos/editar.png" width="16">
+                                            </button>
                                             <form method="POST" action="borrar.php">
                                                 <button class="btn btn-sm btn-outline-danger" name="eliminarProducto" type="submit" value="<?= $row['id'] ?>">
                                                     <img src="im/iconos/eliminar.png" width="16">
@@ -237,6 +264,26 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+                <!-- Editar prodcutos -->
+                <div id="editarProducto" class="formulario card p-4 mt-3">
+                    <?php $resultadoProducto = $conexion -> query("SELECT * FROM producto") ?>;
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" id="editarId" name="id">
+                        <img id="imagen" src="<?= $row['imagen'] ?>" style="width:150px;height:auto;" class="mb-3"> <br>
+
+                        <label>Editar imagen</label>
+                        <input type="file" accept="image/*" name="editarImagen" class="form-control mb-3">
+
+                        <label>Editar nombre</label>
+                        <input type="text" id="editarNombre" name="editarNombre" class="form-control mb-3">
+                        <label>Editar precio</label>
+                        <input type="text" id="editarPrecio" name="editarPrecio" class="form-control mb-3">
+
+                        <label>Editar color</label>
+                        <input type="text" id="editarColor" name="editarColor" class="form-control mb-3">
+                        <button type="submit" name="editarProducto" class="btn btn-primary">Guardar cambios</button>
+                    </form>
                 </div>
             </div>
         </div>

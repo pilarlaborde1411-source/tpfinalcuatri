@@ -22,6 +22,16 @@ function mostrar(id){ //Define función
     formulario.classList.add('activo');
 }
 
+function editarProducto(id, nombre, precio, imagen, color){
+
+    document.getElementById("editarId").value = id;
+    document.getElementById("editarNombre").value = nombre;
+    document.getElementById("editarPrecio").value = precio;
+    document.getElementById("editarColor").value = color;
+
+    mostrar("editarProducto");
+}
+
 function eliminarCarrito(idCarrito){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {

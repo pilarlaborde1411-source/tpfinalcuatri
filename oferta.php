@@ -23,7 +23,7 @@ if(mysqli_num_rows($resultado)>0){
     echo "<h1 style='text-align: center; text-transform: uppercase; text-family: Simple Dreams; text-font: 40px;'>".$nombreCategoria."</h1>";
     while ($productos=mysqli_fetch_assoc($resultado)) {
         echo "
-            <div class='card' style='width: 25rem; margin: 20px; display: inline-block;'>
+            <div class='card' style='width: 25rem; margin: 20px; display: inline-block; vertical-align: top;'>
                 <img src='".$productos['imagen']."' class='card-img-top' alt='' style='height: 500px; width: 100%;'>
                 <div class='card-body'>
                 <div class='col-md-4 mb-4'> <a href='detalle.php?id_producto=".$productos['id']."' style='text-decoration: none; color: black;'>

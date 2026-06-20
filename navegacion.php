@@ -1,5 +1,15 @@
 <?php
     include 'conexion.php';
+    if(!isset($_SESSION['usuario'])){
+        header('Location: sesion.php');
+        exit;
+    }
+    $usuario = $_SESSION['usuario'];  
+    if(!isset($_SESSION['admin'])){
+        header('Location: sesion.php');
+        exit;
+    }
+    $usuario = $_SESSION['admin'];  
 ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
